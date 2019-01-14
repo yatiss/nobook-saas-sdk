@@ -1,11 +1,11 @@
 {
   "name": "nobook-saas-sdk",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "nobook saas SDK.",
   "main": "virtual-experiment.js",
   "peerDependencies": {
-    "jquery": "*",
-    "lodash": "*"
+    "jquery": ">=3.0",
+    "lodash": ">=4.0"
   },
   "author": "",
   "license": "ISC"

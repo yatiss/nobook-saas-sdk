@@ -14,6 +14,7 @@ export declare class LabSDK extends EventEmitter {
     private _saveData_resolve;
     constructor();
     /**
+     * 设置
      * appid  应用id,可传入前端使用,由nobook提供
      * pid 产品参数,由 PID_TYPE 对象选取
      * from 来源公司名称
@@ -77,7 +78,7 @@ export declare class LabSDK extends EventEmitter {
     }>;
     /**
      * 保存实验数据
-     * @param config
+     * @param config {iframe的Window对象, 实验标题(可选)}
      * @returns Promise<{data, success, msg?}>
      */
     saveData(config: {
@@ -150,7 +151,7 @@ export declare class LabSDK extends EventEmitter {
      */
     getEditerURL(labId?: string, fromOfficia?: boolean): string;
     /**
-     * 获取编辑器地址
+     * 获取播放器地址
      * @param labId 实验id,不可为空
      * @returns string 播放器地址
      */
@@ -163,7 +164,7 @@ export declare class LabSDK extends EventEmitter {
     getOfficiaIconURL(icon: any): string;
     /**
      * 返回我的资源图标的完整路径
-     * @param iconURL 图标相对路径(xxx/xxx/xxx.jgp)
+     * @param iconURL 图标相对路径
      */
     getMyIconURL(iconURL: any): string;
 }
