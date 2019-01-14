@@ -12,6 +12,7 @@ export declare class LabSDK extends EventEmitter {
     private playerHost;
     private token;
     private _saveData_resolve;
+    private isHTTPS;
     constructor();
     /**
      * 设置
@@ -27,6 +28,7 @@ export declare class LabSDK extends EventEmitter {
         DEBUG?;
         EDITER_DEBUG?;
         PLAYER_DEBUG?;
+        isHTTPS?;
     }): void;
     /**
      * window message 交互

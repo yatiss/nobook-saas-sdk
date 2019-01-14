@@ -18,7 +18,7 @@ addListener(MESSAGE_TYPE.ON_LOAD, (event)=>{
  * from 来源公司名称
  * @param config
  */
-public setConfig(config: { appid, pid, from, DEBUG?, EDITER_DEBUG?, PLAYER_DEBUG? }): void
+public setConfig(config: { appid, pid, from, DEBUG?, EDITER_DEBUG?, PLAYER_DEBUG?, isHTTPS? }): void
 
 /**
  * 用户登录
