@@ -1,7 +1,7 @@
 # nobook SDK
 ### Require install
 ```bash
-$ npm i --save git+ssh://git@github.com:yatiss/nobook-saas-sdk.git#v1.0.5
+$ npm i --save git+ssh://git@github.com:yatiss/nobook-saas-sdk.git#v1.0.7
 ```
 
 ### API
@@ -16,6 +16,7 @@ addListener(MESSAGE_TYPE.ON_LOAD, (event)=>{
  * appid  应用id,可传入前端使用,由nobook提供
  * pid 产品参数,由 PID_TYPE 对象选取
  * from 来源公司名称
+ * isHTTPS 默认使用https协议
  * @param config
  */
 public setConfig(config: { appid, pid, from, DEBUG?, EDITER_DEBUG?, PLAYER_DEBUG?, isHTTPS? }): void
