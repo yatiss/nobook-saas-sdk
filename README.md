@@ -1,7 +1,7 @@
 # nobook SDK
 ### Require install
 ```bash
-$ npm i --save git+ssh://git@github.com:yatiss/nobook-saas-sdk.git#v1.0.7
+$ npm i --save git+ssh://git@github.com:yatiss/nobook-saas-sdk.git#1.0.9
 ```
 
 ### API
