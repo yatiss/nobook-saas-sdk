@@ -29,6 +29,8 @@ export declare class LabSDK extends EventEmitter {
         EDITER_DEBUG?;
         PLAYER_DEBUG?;
         isHTTPS?;
+        EDIT_HOST_DEBUG_PORT?;
+        PLAYER_HOST_DEBUG_PORT?;
     }): void;
     /**
      * window message 交互
@@ -101,7 +103,16 @@ export declare class LabSDK extends EventEmitter {
         msg?;
     }>;
     /**
-     * 获取获取资源类别接口
+     * 获取章节接口
+     * @returns Promise<{success, data, msg?}>
+     */
+    getChapter(): Promise<{
+        success;
+        data;
+        msg?;
+    }>;
+    /**
+     * 获取资源类别接口
      * @returns Promise<{success, data, msg?}>
      */
     getClassificationsList(): Promise<{
@@ -169,4 +180,9 @@ export declare class LabSDK extends EventEmitter {
      * @param iconURL 图标相对路径
      */
     getMyIconURL(iconURL: any): string;
+    /**
+     * 如果 data 为字符串形式则解析为对象
+     * @param data
+     */
+    private jsonObj(data);
 }
