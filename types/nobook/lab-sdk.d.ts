@@ -1,5 +1,6 @@
 import * as EventEmitter from 'eventemitter3';
 export declare class LabSDK extends EventEmitter {
+    private _canDIY;
     private DEBUG;
     private EDITER_DEBUG;
     private PLAYER_DEBUG;
@@ -185,4 +186,5 @@ export declare class LabSDK extends EventEmitter {
      * @param data
      */
     private jsonObj(data);
+    readonly canDIY: boolean;
 }
