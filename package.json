@@ -1,6 +1,6 @@
 {
   "name": "nobook-saas-sdk",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "nobook saas SDK.",
   "main": "virtual-experiment.js",
   "peerDependencies": {
