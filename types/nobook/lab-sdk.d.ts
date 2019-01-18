@@ -32,6 +32,7 @@ export declare class LabSDK extends EventEmitter {
         PLAYER_DEBUG?;
         EDIT_HOST_DEBUG_PORT?;
         PLAYER_HOST_DEBUG_PORT?;
+        PLAYER_HOST_DEBUG?;
     }): void;
     /**
      * window message 交互
