@@ -4,10 +4,10 @@ export declare class LabSDK extends EventEmitter {
     private DEBUG;
     private EDITER_DEBUG;
     private PLAYER_DEBUG;
-    private uid;
-    private appid;
-    private from;
-    private pid;
+    uid: string;
+    appid: string;
+    from: string;
+    pid: string;
     private docHost;
     private editHost;
     private playerHost;
@@ -34,6 +34,7 @@ export declare class LabSDK extends EventEmitter {
         PLAYER_HOST_DEBUG_PORT?;
         PLAYER_HOST_DEBUG?;
     }): void;
+    private freshPidConfig();
     /**
      * window message 交互
      */
@@ -58,6 +59,14 @@ export declare class LabSDK extends EventEmitter {
         success;
         msg?;
     }>;
+    /**
+     * 切换学科
+     * @param param
+     */
+    switchSubject(param: {
+        pid;
+    }): void;
+    private _secondLogin();
     /**
      * 反馈
      * @param param
