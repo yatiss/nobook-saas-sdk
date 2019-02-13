@@ -1,7 +1,7 @@
 # NOBOOK SDK
 ### Require install
 ```bash
-$ npm i --save git+ssh://git@github.com:yatiss/nobook-saas-sdk.git#1.0.18
+$ npm i --save git+ssh://git@github.com:yatiss/nobook-saas-sdk.git#1.0.19
 ```
 
 ### API
@@ -126,13 +126,32 @@ public getOfficiaIconURL(icon): string
  * @param iconURL 图标相对路径
  */
 public getMyIconURL(iconURL): string
+
+/**
+ * 该学科是否可DIY
+ */
+public get canDIY(): boolean
 ```
 ## Demo
 ```javascript
+// 1、es6 或 ts 引用方式
 import {
     LabSDK,
     MESSAGE_TYPE
 } from 'nobook-saas-sdk';
+
+/*
+2、页面直接引用方式
+<script src="virtual-experiment.min.js"></script>
+并通过 window 提取SDK
+const {
+    LabSDK,
+    MESSAGE_TYPE,
+    PID_TYPE
+} = window.NBSDK;
+3、es5引用方式
+const NBSDK = require('nobook-saas-sdk/virtual-experiment.min.js');
+ */
 
 const labSDK = new LabSDK();
 

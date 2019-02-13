@@ -1,3 +1,13 @@
+<a name="1.0.19"></a>
+## [1.0.19](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v1.0.18...v1.0.19) (2019-02-13)
+
+
+### Bug Fixes
+
+* 修改文档说明 ([3454ca8](https://192.168.1.111/virtual-lab/nobook-saas-source/commits/3454ca8))
+
+
+
 <a name="1.0.18"></a>
 ## [1.0.18](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v1.0.17...v1.0.18) (2019-02-13)
 
