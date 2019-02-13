@@ -1,7 +1,7 @@
 # NOBOOK SDK
 ### Require install
 ```bash
-$ npm i --save git+ssh://git@github.com:yatiss/nobook-saas-sdk.git#1.0.17
+$ npm i --save git+ssh://git@github.com:yatiss/nobook-saas-sdk.git#1.0.18
 ```
 
 ### API
@@ -31,6 +31,12 @@ public setConfig(config: { appid, pid, from, DEBUG?, EDITER_DEBUG?, PLAYER_DEBUG
  * @returns Promise<{data, success, msg?}>
  */
 public login(param: { uid, sign, timestamp, nickname }): Promise<{ data, success, msg? }>
+
+/**
+ * 切换学科
+ * @param param
+ */
+public switchSubject(param: {pid}): void
 
 /**
  * 反馈

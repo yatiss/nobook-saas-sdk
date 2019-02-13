@@ -1,12 +1,13 @@
 {
-  "name": "nobook-saas-sdk",
-  "version": "0.0.0-PLACEHOLDER",
-  "description": "nobook saas SDK.",
-  "main": "virtual-experiment.js",
-  "peerDependencies": {
-    "jquery": ">=3.0",
-    "lodash": ">=4.0"
-  },
-  "author": "",
-  "license": "ISC"
+	"main": "index.js",
+	"version": "0.0.0-PLACEHOLDER",
+	"description": "nobook saas SDK.",
+	"author": "",
+	"license": "ISC",
+	"name": "nobook-saas-sdk",
+	"peerDependencies": {
+		"jquery": "^3.2.1",
+		"lodash": "^4.17.11"
+	},
+	"_id": "nobook-saas-sdk@0.0.0-PLACEHOLDER"
 }
