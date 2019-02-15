@@ -1,3 +1,13 @@
+<a name="1.0.20"></a>
+## [1.0.20](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v1.0.19...v1.0.20) (2019-02-15)
+
+
+### Bug Fixes
+
+* 调整模块结构,添加实验加试模块 ([a3b3d69](https://192.168.1.111/virtual-lab/nobook-saas-source/commits/a3b3d69))
+
+
+
 <a name="1.0.19"></a>
 ## [1.0.19](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v1.0.18...v1.0.19) (2019-02-13)
 
