@@ -1,3 +1,13 @@
+<a name="1.0.22"></a>
+## [1.0.22](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v1.0.21...v1.0.22) (2019-02-15)
+
+
+### Bug Fixes
+
+* 添加 README ([ee55a48](https://192.168.1.111/virtual-lab/nobook-saas-source/commits/ee55a48))
+
+
+
 <a name="1.0.21"></a>
 ## [1.0.21](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v1.0.20...v1.0.21) (2019-02-15)
 
