@@ -21,16 +21,12 @@ export var host = {
         ICON_HOST: 'https://res-api.nobook.com/sw/gz/libs/biology',
         PLAYER_HOST: 'https://res-api.nobook.com/sw/gz/libs/biology/'
     },
-    DOC_HOST: 'https://res-api.nobook.com',
-    DOC_HOST_DEBUG: 'https://res-api.nobook.cc',
     EDIT_HOST_DEBUG: 'http://192.168.1.22',
     EDIT_HOST_DEBUG_PORT: '3033',
     PLAYER_HOST_DEBUG: 'http://localhost',
     PLAYER_HOST_DEBUG_PORT: '4800'
 };
 export var docURL = {
-    loginURL: "/api/resapi/v1/login",
-    loginSecondURL: "/zyb/login",
     getListURL: "/api/resapi/v1/resources/get",
     getChapterURL: "/api/resapi/v1/resources/chapter",
     getMyLabDataURL: "/api/resapi/v1/myresources/get",

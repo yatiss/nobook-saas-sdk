@@ -25,6 +25,7 @@ var LabSDK = (function (_super) {
         return _this;
     }
     LabSDK.prototype.setConfig = function (config) {
+        _super.prototype.setConfig.call(this, config);
         this.DEBUG = config.DEBUG;
         this.EDITER_DEBUG = config.EDITER_DEBUG;
         this.PLAYER_DEBUG = config.PLAYER_DEBUG;
@@ -40,11 +41,7 @@ var LabSDK = (function (_super) {
             host.PLAYER_HOST_DEBUG_PORT = config.PLAYER_HOST_DEBUG_PORT;
         }
         this.appid = config.appid;
-        this.docHost = this.DEBUG ? host.DOC_HOST_DEBUG : host.DOC_HOST;
         this.freshPidConfig();
-        if (this.DEBUG) {
-            this.docHost = this.docHost.replace('https', 'http');
-        }
         for (var _i = 0, _a = Object.keys(docURL); _i < _a.length; _i++) {
             var key = _a[_i];
             docURL[key] = this.docHost + docURL[key];

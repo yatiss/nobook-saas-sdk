@@ -3,7 +3,7 @@ import { LabSDK } from './lab-sdk';
 import { MESSAGE_TYPE, PID_TYPE } from '../config';
 export { APPID_TEST, APPKEY_TEST, LabSDK, PID_TYPE, MESSAGE_TYPE };
 if (typeof window === 'object') {
-    window.NBSDK = {
+    window.NB_SDK_LAB = {
         APPID_TEST: APPID_TEST,
         APPKEY_TEST: APPKEY_TEST,
         LabSDK: LabSDK,

@@ -1,1 +1,2 @@
-export * from './additional-sdk';
+import { AdditionalSDK } from './additional-sdk';
+export { AdditionalSDK };

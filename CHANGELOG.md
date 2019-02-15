@@ -1,3 +1,13 @@
+<a name="1.0.21"></a>
+## [1.0.21](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v1.0.20...v1.0.21) (2019-02-15)
+
+
+### Bug Fixes
+
+* 修改结构,调整实验加试 ([bbac667](https://192.168.1.111/virtual-lab/nobook-saas-source/commits/bbac667))
+
+
+
 <a name="1.0.20"></a>
 ## [1.0.20](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v1.0.19...v1.0.20) (2019-02-15)
 

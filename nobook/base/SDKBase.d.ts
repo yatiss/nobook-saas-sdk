@@ -6,6 +6,7 @@ export declare class SDKBase extends EventEmitter {
     from: string;
     pid: string;
     token: any;
+    protected docHost: string;
     constructor();
     setConfig(config: {
         appid;
@@ -24,5 +25,12 @@ export declare class SDKBase extends EventEmitter {
         msg?;
     }>;
     private _secondLogin();
+    logout(param: {
+        uid;
+    }): Promise<{
+        data;
+        success;
+        msg?;
+    }>;
     protected jsonObj(data: any): any;
 }

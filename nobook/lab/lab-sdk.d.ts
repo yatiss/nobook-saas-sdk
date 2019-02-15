@@ -2,7 +2,6 @@ import { SDKBase } from '../base';
 export declare class LabSDK extends SDKBase {
     EDITER_DEBUG: boolean;
     PLAYER_DEBUG: boolean;
-    private docHost;
     private editHost;
     private playerHost;
     private _saveData_resolve;

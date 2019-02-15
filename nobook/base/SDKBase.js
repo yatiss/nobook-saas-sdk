@@ -11,7 +11,7 @@ var __extends = (this && this.__extends) || (function () {
 import * as EventEmitter from 'eventemitter3';
 import * as $ from 'jquery';
 import { PID_TYPE } from '../config';
-import { docURL } from '../lab/lab-config';
+import { GLOBAL_HOST, GLOBAL_DOCURL } from '../config';
 import { extend } from 'lodash';
 var SDKBase = (function (_super) {
     __extends(SDKBase, _super);
@@ -22,6 +22,11 @@ var SDKBase = (function (_super) {
         return _this;
     }
     SDKBase.prototype.setConfig = function (config) {
+        this.docHost = this.DEBUG ? GLOBAL_HOST.DOC_HOST_DEBUG : GLOBAL_HOST.DOC_HOST;
+        for (var _i = 0, _a = Object.keys(GLOBAL_DOCURL); _i < _a.length; _i++) {
+            var key = _a[_i];
+            GLOBAL_DOCURL[key] = this.docHost + GLOBAL_DOCURL[key];
+        }
     };
     SDKBase.prototype.login = function (param) {
         var _this = this;
@@ -32,7 +37,7 @@ var SDKBase = (function (_super) {
         return new Promise(function (resolve, reject) {
             if (_this.pid === PID_TYPE.BIOLOGICAL1 || _this.pid === PID_TYPE.BIOLOGICAL2) {
             }
-            $.get(docURL.loginURL, allNeedParam, function (data, status) {
+            $.get(GLOBAL_DOCURL.loginURL, allNeedParam, function (data, status) {
                 if (status === 'success') {
                     data = _this.jsonObj(data);
                     if (data.code === 200) {
@@ -84,7 +89,7 @@ var SDKBase = (function (_super) {
                     token: _this.token
                 },
                 async: false,
-                url: docURL.loginSecondURL,
+                url: GLOBAL_DOCURL.loginSecondURL,
                 dataType: "jsonp",
                 jsonp: "jsonpcallback",
                 crossDomain: true,
@@ -96,6 +101,9 @@ var SDKBase = (function (_super) {
                 }
             });
         });
+    };
+    SDKBase.prototype.logout = function (param) {
+        return new Promise(function (resolve, reject) { });
     };
     SDKBase.prototype.jsonObj = function (data) {
         return Object.prototype.toString.call(data) === '[object String]' ? JSON.parse(data) : data;
