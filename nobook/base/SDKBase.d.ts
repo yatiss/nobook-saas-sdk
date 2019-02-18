@@ -14,6 +14,10 @@ export declare class SDKBase extends EventEmitter {
         from;
         DEBUG?;
     }): void;
+    outerLogin(param: {
+        token;
+        nobookUid;
+    }): Promise<any>;
     login(param: {
         uid;
         sign;
@@ -24,7 +28,7 @@ export declare class SDKBase extends EventEmitter {
         success;
         msg?;
     }>;
-    private _secondLogin();
+    secondLogin(): Promise<any>;
     logout(param: {
         uid;
     }): Promise<{

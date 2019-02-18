@@ -22,11 +22,16 @@ var SDKBase = (function (_super) {
         return _this;
     }
     SDKBase.prototype.setConfig = function (config) {
-        this.docHost = this.DEBUG ? GLOBAL_HOST.DOC_HOST_DEBUG : GLOBAL_HOST.DOC_HOST;
+        this.docHost = config.DEBUG ? GLOBAL_HOST.DOC_HOST_DEBUG : GLOBAL_HOST.DOC_HOST;
         for (var _i = 0, _a = Object.keys(GLOBAL_DOCURL); _i < _a.length; _i++) {
             var key = _a[_i];
             GLOBAL_DOCURL[key] = this.docHost + GLOBAL_DOCURL[key];
         }
+    };
+    SDKBase.prototype.outerLogin = function (param) {
+        this.token = param.token;
+        this.uid = param.nobookUid;
+        return this.secondLogin();
     };
     SDKBase.prototype.login = function (param) {
         var _this = this;
@@ -44,7 +49,7 @@ var SDKBase = (function (_super) {
                         _this.token = data.data.token;
                         _this.uid = data.data.uid;
                         var reData_1 = data.data;
-                        _this._secondLogin().then(function (data) {
+                        _this.secondLogin().then(function (data) {
                             if (data.code === 200) {
                                 resolve({
                                     success: true,
@@ -80,7 +85,7 @@ var SDKBase = (function (_super) {
             });
         });
     };
-    SDKBase.prototype._secondLogin = function () {
+    SDKBase.prototype.secondLogin = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
             $.ajax({

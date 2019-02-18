@@ -1,3 +1,13 @@
+<a name="1.0.23"></a>
+## [1.0.23](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v1.0.22...v1.0.23) (2019-02-18)
+
+
+### Bug Fixes
+
+* 添加 outerLogin 方法 ([2d38133](https://192.168.1.111/virtual-lab/nobook-saas-source/commits/2d38133))
+
+
+
 <a name="1.0.22"></a>
 ## [1.0.22](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v1.0.21...v1.0.22) (2019-02-15)
 
