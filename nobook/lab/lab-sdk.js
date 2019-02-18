@@ -31,6 +31,9 @@ var LabSDK = (function (_super) {
         this.PLAYER_DEBUG = config.PLAYER_DEBUG;
         this.from = config.from;
         this.pid = config.pid;
+        if (config.hasOwnProperty('EDIT_HOST_DEBUG')) {
+            host.EDIT_HOST_DEBUG = config.EDIT_HOST_DEBUG;
+        }
         if (config.hasOwnProperty('EDIT_HOST_DEBUG_PORT')) {
             host.EDIT_HOST_DEBUG_PORT = config.EDIT_HOST_DEBUG_PORT;
         }

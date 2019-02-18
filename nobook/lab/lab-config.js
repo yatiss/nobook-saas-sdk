@@ -21,9 +21,9 @@ export var host = {
         ICON_HOST: 'https://res-api.nobook.com/sw/gz/libs/biology',
         PLAYER_HOST: 'https://res-api.nobook.com/sw/gz/libs/biology/'
     },
-    EDIT_HOST_DEBUG: 'http://192.168.1.22',
+    EDIT_HOST_DEBUG: 'http://0.0.0.0',
     EDIT_HOST_DEBUG_PORT: '3033',
-    PLAYER_HOST_DEBUG: 'http://localhost',
+    PLAYER_HOST_DEBUG: 'http://0.0.0.0',
     PLAYER_HOST_DEBUG_PORT: '4800'
 };
 export var docURL = {

@@ -19,6 +19,7 @@ export declare class LabSDK extends SDKBase {
         EDIT_HOST_DEBUG_PORT?;
         PLAYER_HOST_DEBUG_PORT?;
         PLAYER_HOST_DEBUG?;
+        EDIT_HOST_DEBUG;
     }): void;
     private freshPidConfig();
     private addListeners();
