@@ -1,3 +1,13 @@
+<a name="1.0.25"></a>
+## [1.0.25](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v1.0.24...v1.0.25) (2019-02-20)
+
+
+### Bug Fixes
+
+* 修改初中生物获取列表bug ([529420a](https://192.168.1.111/virtual-lab/nobook-saas-source/commits/529420a))
+
+
+
 <a name="1.0.24"></a>
 ## [1.0.24](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v1.0.23...v1.0.24) (2019-02-18)
 

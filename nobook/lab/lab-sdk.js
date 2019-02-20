@@ -232,7 +232,7 @@ var LabSDK = (function (_super) {
             }, function (data) {
                 data = _this.jsonObj(data);
                 if (data.code === 200) {
-                    if (_this.pid === PID_TYPE.BIOLOGICAL2) {
+                    if (_this.pid === PID_TYPE.BIOLOGICAL2 || _this.pid === PID_TYPE.BIOLOGICAL1) {
                         if (data.data && data.data.length) {
                             data.data.forEach(function (item) {
                                 item.id = Base64.encode(item.url);
