@@ -25,7 +25,15 @@ export declare class LabSDK extends SDKBase {
     private addListeners();
     switchSubject(param: {
         pid;
-    }): void;
+        uid;
+        sign;
+        timestamp;
+        nickname;
+    }): Promise<{
+        data;
+        success;
+        msg?;
+    }>;
     sendFeedback(param: {
         title;
         content;

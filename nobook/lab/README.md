@@ -27,11 +27,12 @@ public setConfig(config: { appid, pid, from, DEBUG?, EDITER_DEBUG?, PLAYER_DEBUG
  */
 public login(param: { uid, sign, timestamp, nickname }): Promise<{ data, success, msg? }>
 
-/**
- * 切换学科
- * @param param
- */
-public switchSubject(param: {pid}): void
+ /**
+  * 切换学科
+  * 注: 此接口调用了login,进行了二次登录
+  * @param param 参考登录接口login
+  */
+public switchSubject(param: { pid, uid, sign, timestamp, nickname }): Promise<{ data, success, msg? }>
 
 /**
  * 反馈

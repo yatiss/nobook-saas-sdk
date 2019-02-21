@@ -90,6 +90,12 @@ var LabSDK = (function (_super) {
     LabSDK.prototype.switchSubject = function (param) {
         this.pid = param.pid;
         this.freshPidConfig();
+        return this.login({
+            uid: param.uid,
+            sign: param.sign,
+            timestamp: param.timestamp,
+            nickname: param.nickname,
+        });
     };
     LabSDK.prototype.sendFeedback = function (param) {
         var _this = this;
