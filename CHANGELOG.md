@@ -1,3 +1,13 @@
+<a name="1.0.27"></a>
+## [1.0.27](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v1.0.26...v1.0.27) (2019-02-22)
+
+
+### Bug Fixes
+
+* 添加内部调试关联 EDITER_DEBUG ([ada92a7](https://192.168.1.111/virtual-lab/nobook-saas-source/commits/ada92a7))
+
+
+
 <a name="1.0.26"></a>
 ## [1.0.26](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v1.0.25...v1.0.26) (2019-02-21)
 
