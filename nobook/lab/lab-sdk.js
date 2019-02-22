@@ -326,6 +326,9 @@ var LabSDK = (function (_super) {
         if (labId === void 0) { labId = ''; }
         if (fromOfficia === void 0) { fromOfficia = false; }
         var editURL = this.editHost + "/#/" + this.editEndName + "?token=" + this.token + "&uid=" + this.uid + "&labid=" + labId;
+        if (this.EDITER_DEBUG) {
+            editURL += '&EDITER_DEBUG=1';
+        }
         if (fromOfficia) {
             editURL += '&sourcefrom=1';
         }
