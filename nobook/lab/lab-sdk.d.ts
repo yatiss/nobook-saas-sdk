@@ -16,8 +16,6 @@ export declare class LabSDK extends SDKBase {
         DEBUG?;
         EDITER_DEBUG?;
         PLAYER_DEBUG?;
-        EDIT_HOST_DEBUG_PORT?;
-        PLAYER_HOST_DEBUG_PORT?;
         PLAYER_HOST_DEBUG?;
         EDIT_HOST_DEBUG;
     }): void;

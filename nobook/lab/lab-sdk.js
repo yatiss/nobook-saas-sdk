@@ -34,14 +34,8 @@ var LabSDK = (function (_super) {
         if (config.hasOwnProperty('EDIT_HOST_DEBUG')) {
             host.EDIT_HOST_DEBUG = config.EDIT_HOST_DEBUG;
         }
-        if (config.hasOwnProperty('EDIT_HOST_DEBUG_PORT')) {
-            host.EDIT_HOST_DEBUG_PORT = config.EDIT_HOST_DEBUG_PORT;
-        }
         if (config.hasOwnProperty('PLAYER_HOST_DEBUG')) {
             host.PLAYER_HOST_DEBUG = config.PLAYER_HOST_DEBUG;
-        }
-        if (config.hasOwnProperty('PLAYER_HOST_DEBUG_PORT')) {
-            host.PLAYER_HOST_DEBUG_PORT = config.PLAYER_HOST_DEBUG_PORT;
         }
         this.appid = config.appid;
         this.freshPidConfig();
@@ -63,14 +57,14 @@ var LabSDK = (function (_super) {
             this.editHost = host[this.pid].EDIT_HOST;
         }
         else {
-            this.editHost = host.EDIT_HOST_DEBUG + ":" + host.EDIT_HOST_DEBUG_PORT;
+            this.editHost = "" + host.EDIT_HOST_DEBUG;
             this.editHost = this.editHost.replace('https', 'http');
         }
         if (!this.PLAYER_DEBUG) {
             this.playerHost = host[this.pid].PLAYER_HOST;
         }
         else {
-            this.playerHost = host.PLAYER_HOST_DEBUG + ":" + host.PLAYER_HOST_DEBUG_PORT;
+            this.playerHost = "" + host.PLAYER_HOST_DEBUG;
             this.playerHost = this.playerHost.replace('https', 'http');
         }
     };

@@ -1,3 +1,8 @@
+<a name="1.0.28"></a>
+## [1.0.28](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v1.0.27...v1.0.28) (2019-03-05)
+
+
+
 <a name="1.0.27"></a>
 ## [1.0.27](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v1.0.26...v1.0.27) (2019-02-22)
 
