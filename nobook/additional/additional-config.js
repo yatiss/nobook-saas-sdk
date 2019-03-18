@@ -2,10 +2,10 @@ export var host = {
     ADD_DOC_HOST: 'http://exam-app.nobook.com',
     ADD_DOC_HOST_DEBUG: 'http://exam-app.nobook.cc',
     PHYSICAL_ADD: {
-        ICON_HOST: 'https://wuli.nobook.com'
+        ICON_HOST: 'http://addphys.nobook.cc/v1/assets/physics'
     },
     CHEMICAL_ADD: {
-        ICON_HOST: 'https://wuli.nobook.com'
+        ICON_HOST: 'xxxxxxxxxxx'
     },
     EXAM_VIEW_HOST: ''
 };

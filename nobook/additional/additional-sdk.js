@@ -29,10 +29,13 @@ var AdditionalSDK = (function (_super) {
             docURL[key] = this.addDocHost + docURL[key];
         }
         if (config.EXAM_VIEW_HOST_DEBUG) {
-            this.examViewHost = config.EXAM_VIEW_HOST_DEBUG;
+            host.EXAM_VIEW_HOST = config.EXAM_VIEW_HOST_DEBUG;
         }
-        else {
-            this.examViewHost = host.EXAM_VIEW_HOST;
+        if (config.ICON_HOST_PHYSICAL_DEBUG) {
+            host[PID_TYPE.PHYSICAL_ADD].ICON_HOST = config.ICON_HOST_PHYSICAL_DEBUG;
+        }
+        if (config.ICON_HOST_CHEMICAL_DEBUG) {
+            host[PID_TYPE.CHEMICAL_ADD].ICON_HOST = config.ICON_HOST_CHEMICAL_DEBUG;
         }
     };
     AdditionalSDK.prototype.freshPidConfig = function () {
@@ -160,7 +163,7 @@ var AdditionalSDK = (function (_super) {
     AdditionalSDK.prototype.getExamViewURL = function (param) {
         if (!param.hasOwnProperty('isexam'))
             param.isexam = 1;
-        return this.examViewHost + "?relationid=" + param.courseId + "&token=" + this.token + "&isexam=" + param.isexam + "&pid=" + this.pid;
+        return host.EXAM_VIEW_HOST + "?relationid=" + param.courseId + "&token=" + this.token + "&isexam=" + param.isexam + "&pid=" + this.pid;
     };
     return AdditionalSDK;
 }(SDKBase));

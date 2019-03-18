@@ -6,7 +6,6 @@ export declare class AdditionalSDK extends SDKBase {
     private addDocHost;
     private iconHost;
     private _saveExam_resolve;
-    private examViewHost;
     constructor();
     setConfig(config: {
         appKey;
@@ -14,6 +13,8 @@ export declare class AdditionalSDK extends SDKBase {
         from;
         DEBUG?;
         EXAM_VIEW_HOST_DEBUG?;
+        ICON_HOST_PHYSICAL_DEBUG?;
+        ICON_HOST_CHEMICAL_DEBUG?;
     }): void;
     freshPidConfig(): void;
     switchSubject(param: {
