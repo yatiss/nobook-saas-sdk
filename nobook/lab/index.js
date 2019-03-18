@@ -1,11 +1,10 @@
-import { APPID_TEST, APPKEY_TEST } from './lab-config';
 import { LabSDK } from './lab-sdk';
-import { MESSAGE_TYPE, PID_TYPE } from '../config';
-export { APPID_TEST, APPKEY_TEST, LabSDK, PID_TYPE, MESSAGE_TYPE };
+import { APPKEY_TEST, APPSECRET_TEST, MESSAGE_TYPE, PID_TYPE } from '../config';
+export { APPKEY_TEST, APPSECRET_TEST, LabSDK, PID_TYPE, MESSAGE_TYPE };
 if (typeof window === 'object') {
     window.NB_SDK_LAB = {
-        APPID_TEST: APPID_TEST,
         APPKEY_TEST: APPKEY_TEST,
+        APPSECRET_TEST: APPSECRET_TEST,
         LabSDK: LabSDK,
         PID_TYPE: PID_TYPE,
         MESSAGE_TYPE: MESSAGE_TYPE

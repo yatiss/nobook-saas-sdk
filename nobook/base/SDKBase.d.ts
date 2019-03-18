@@ -1,40 +1,48 @@
 import * as EventEmitter from 'eventemitter3';
 export declare class SDKBase extends EventEmitter {
     DEBUG: boolean;
+    uniqueId: string;
+    nickname: string;
     uid: string;
-    appid: string;
+    appKey: string;
     from: string;
-    pid: string;
+    pidType: string;
     token: any;
     protected docHost: string;
     constructor();
     setConfig(config: {
-        appid;
-        pid;
+        appKey;
+        pidType;
         from;
         DEBUG?;
     }): void;
-    outerLogin(param: {
-        token;
-        nobookUid;
-    }): Promise<any>;
     login(param: {
-        uid;
-        sign;
+        uniqueId;
         timestamp;
+        sign;
         nickname;
+        pidScope;
     }): Promise<{
         data;
         success;
         msg?;
     }>;
-    secondLogin(): Promise<any>;
-    logout(param: {
-        uid;
-    }): Promise<{
+    logout(): Promise<{
         data;
         success;
         msg?;
     }>;
+    $get(url: any, param: any): Promise<{
+        data;
+        success;
+        msg?;
+    }>;
+    $post(url: any, param: any): Promise<{
+        data;
+        success;
+        msg?;
+    }>;
+    private $server(param);
     protected jsonObj(data: any): any;
+    protected isArray(obj: any): boolean;
 }

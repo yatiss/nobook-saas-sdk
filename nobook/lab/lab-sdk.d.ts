@@ -10,41 +10,26 @@ export declare class LabSDK extends SDKBase {
     private _canDIY;
     constructor();
     setConfig(config: {
-        appid;
-        pid;
+        appKey;
+        pidType;
         from;
         DEBUG?;
         EDITER_DEBUG?;
         PLAYER_DEBUG?;
         PLAYER_HOST_DEBUG?;
-        EDIT_HOST_DEBUG;
+        EDIT_HOST_DEBUG?;
     }): void;
     private freshPidConfig();
     private addListeners();
     switchSubject(param: {
-        pid;
-        uid;
-        sign;
-        timestamp;
-        nickname;
+        pidType;
+    }): void;
+    deleteData(param: {
+        labId;
     }): Promise<{
         data;
         success;
         msg?;
-    }>;
-    sendFeedback(param: {
-        title;
-        content;
-        source;
-        pics?;
-    }): Promise<{
-        data;
-        success;
-        msg?;
-    }>;
-    deleteData(labId: string): Promise<{
-        success;
-        msg;
     }>;
     saveData(config: {
         iframeWindow;
@@ -53,11 +38,20 @@ export declare class LabSDK extends SDKBase {
         success;
         msg;
     }>;
-    renameData(labId: string, title: string): Promise<{
+    renameData(param: {
+        labId;
+        newTitle;
+    }): Promise<{
+        data;
         success;
         msg?;
     }>;
     getChapter(): Promise<{
+        success;
+        data;
+        msg?;
+    }>;
+    clearRedis(): Promise<{
         success;
         data;
         msg?;
@@ -67,17 +61,66 @@ export declare class LabSDK extends SDKBase {
         data;
         msg?;
     }>;
-    getLabList(typename: string): Promise<{
+    getResourcesByCategory(param: {
+        categoryId;
+    }): Promise<{
         success;
         data;
         msg?;
     }>;
-    getMyLabList(): Promise<{
+    searchDIY(param: {
+        keyword;
+    }): Promise<{
         success;
         data;
         msg?;
     }>;
-    getLabDetail(labId: string): Promise<{
+    searchResources(param: {
+        keyword;
+    }): Promise<{
+        success;
+        data;
+        msg?;
+    }>;
+    getResourcesByChapter(param: {
+        textbookId;
+        versionId;
+        chapterId;
+        sectionId;
+    }): Promise<{
+        success;
+        data;
+        msg?;
+    }>;
+    getDIYLabList(param: {
+        page?;
+        perPage?;
+    }): Promise<{
+        success;
+        data;
+        page?;
+        perPage?;
+        total?;
+        msg?;
+    }>;
+    getInfoResources(param: {
+        labId;
+    }): Promise<{
+        success;
+        data;
+        msg?;
+    }>;
+    getInfoDIY(param: {
+        labId;
+    }): Promise<{
+        success;
+        data;
+        msg?;
+    }>;
+    shareDIY(param: {
+        uniqueId;
+        labId;
+    }): Promise<{
         success;
         data;
         msg?;
@@ -88,6 +131,10 @@ export declare class LabSDK extends SDKBase {
     getEditerURL(labId?: string, fromOfficia?: boolean): string;
     getPlayerURL(labId: string): string;
     getOfficiaIconURL(icon: any): string;
-    getMyIconURL(iconURL: any): string;
+    getDIYIconURL(iconURL: any): string;
+    getAllLabPidScope(): string;
     readonly canDIY: boolean;
+    isPhysical(): boolean;
+    isChemical(): boolean;
+    isBiological(): boolean;
 }

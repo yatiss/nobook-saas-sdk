@@ -4,10 +4,10 @@
 	"description": "nobook saas SDK.",
 	"author": "",
 	"license": "ISC",
-	"name": "nobook-saas-sdk",
+	"name": "@nobook/nobook-saas-sdk",
 	"peerDependencies": {
 		"jquery": "^3.2.1",
 		"lodash": "^4.17.11"
 	},
-	"_id": "nobook-saas-sdk@0.0.0-PLACEHOLDER"
+	"_id": "@nobook/nobook-saas-sdk@0.0.0-PLACEHOLDER"
 }
