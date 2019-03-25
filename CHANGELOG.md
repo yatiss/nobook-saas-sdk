@@ -1,3 +1,13 @@
+<a name="2.0.2"></a>
+## [2.0.2](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v2.0.1...v2.0.2) (2019-03-25)
+
+
+### Bug Fixes
+
+* 初高中分离 ([8a1f30e](https://192.168.1.111/virtual-lab/nobook-saas-source/commits/8a1f30e))
+
+
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v2.0.0...v2.0.1) (2019-03-18)
 

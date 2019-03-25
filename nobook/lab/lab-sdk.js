@@ -274,9 +274,9 @@ var LabSDK = (function (_super) {
     LabSDK.prototype.getPlayerURL = function (labId) {
         if (this.isBiological()) {
             if (this.PLAYER_DEBUG) {
-                return "http://res-api.nobook.cc/sw/gz/libs/biology/" + Base64.decode(labId);
+                return host[this.pidType].PLAYER_HOST_DEBUG + "?sourceid=" + labId + "&token=" + this.token + "&type=" + this.from;
             }
-            return "" + host[this.pidType].PLAYER_HOST + Base64.decode(labId);
+            return "" + host[this.pidType].PLAYER_HOST + Base64.decode(labId) + "&token=" + this.token + "&type=" + this.from;
         }
         var playerURL = this.playerHost + "?type=" + this.from + "&sourceid=" + labId;
         return playerURL;

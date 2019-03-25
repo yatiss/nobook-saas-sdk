@@ -28,11 +28,9 @@ export declare const PID_VALUE: {
         source: string;
     };
     BIOLOGICAL1: {
-        lab: string;
         source: string;
     };
     BIOLOGICAL2: {
-        lab: string;
         source: string;
     };
     PHYSICAL_ADD: string;

@@ -28,12 +28,10 @@ export var PID_VALUE = {
         source: 'RESGZHX54req'
     },
     BIOLOGICAL1: {
-        lab: 'JuFhE84jRhEh',
-        source: 'RESCZSWRoudZ'
+        source: 'JuFhE84jRhEh'
     },
     BIOLOGICAL2: {
-        lab: 'EjEViMk33jNr',
-        source: 'RESGZSWFC71X'
+        source: 'EjEViMk33jNr'
     },
     PHYSICAL_ADD: 'dd884e33339c29a5721e827eafd9039d',
     CHEMICAL_ADD: '10822dc066ee1da448c3da1936a21f49'
