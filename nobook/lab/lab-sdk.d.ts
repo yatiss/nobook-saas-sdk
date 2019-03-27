@@ -1,7 +1,5 @@
 import { SDKBase } from '../base';
 export declare class LabSDK extends SDKBase {
-    EDITER_DEBUG: boolean;
-    PLAYER_DEBUG: boolean;
     private editHost;
     private playerHost;
     private _saveData_resolve;
@@ -13,11 +11,7 @@ export declare class LabSDK extends SDKBase {
         appKey;
         pidType;
         from;
-        DEBUG?;
-        EDITER_DEBUG?;
-        PLAYER_DEBUG?;
-        PLAYER_HOST_DEBUG?;
-        EDIT_HOST_DEBUG?;
+        debugSettings?;
     }): void;
     private freshPidConfig();
     private addListeners();
@@ -143,4 +137,6 @@ export declare class LabSDK extends SDKBase {
     isChemical(): boolean;
     isBiological(): boolean;
     readonly grade: number;
+    private readonly debugEditerHost;
+    private readonly debugPlayerHost;
 }

@@ -17,8 +17,6 @@ var LabSDK = (function (_super) {
     __extends(LabSDK, _super);
     function LabSDK() {
         var _this = _super.call(this) || this;
-        _this.EDITER_DEBUG = false;
-        _this.PLAYER_DEBUG = false;
         _this._saveData_resolve = null;
         _this._canDIY = false;
         _this.addListeners();
@@ -26,15 +24,7 @@ var LabSDK = (function (_super) {
     }
     LabSDK.prototype.setConfig = function (config) {
         _super.prototype.setConfig.call(this, config);
-        this.EDITER_DEBUG = config.EDITER_DEBUG;
-        this.PLAYER_DEBUG = config.PLAYER_DEBUG;
         this.from = config.from;
-        if (config.hasOwnProperty('EDIT_HOST_DEBUG')) {
-            host.EDIT_HOST_DEBUG = config.EDIT_HOST_DEBUG;
-        }
-        if (config.hasOwnProperty('PLAYER_HOST_DEBUG')) {
-            host.PLAYER_HOST_DEBUG = config.PLAYER_HOST_DEBUG;
-        }
         this.freshPidConfig();
         for (var _i = 0, _a = Object.keys(docURL); _i < _a.length; _i++) {
             var key = _a[_i];
@@ -49,19 +39,19 @@ var LabSDK = (function (_super) {
             this.iconHost = this.iconHost.replace('https', 'http');
             this.iconHost = this.iconHost.replace('.com', '.cc');
         }
-        if (!this.EDITER_DEBUG) {
-            this.editHost = host[this.pidType].EDIT_HOST;
-        }
-        else {
-            this.editHost = "" + host.EDIT_HOST_DEBUG;
+        if (this.debugEditerHost) {
+            this.editHost = this.debugEditerHost;
             this.editHost = this.editHost.replace('https', 'http');
         }
-        if (!this.PLAYER_DEBUG) {
-            this.playerHost = host[this.pidType].PLAYER_HOST;
+        else {
+            this.editHost = host[this.pidType].EDIT_HOST;
+        }
+        if (this.debugPlayerHost) {
+            this.playerHost = this.debugPlayerHost;
+            this.playerHost = this.playerHost.replace('https', 'http');
         }
         else {
-            this.playerHost = "" + host.PLAYER_HOST_DEBUG;
-            this.playerHost = this.playerHost.replace('https', 'http');
+            this.playerHost = host[this.pidType].PLAYER_HOST;
         }
     };
     LabSDK.prototype.addListeners = function () {
@@ -260,7 +250,7 @@ var LabSDK = (function (_super) {
     LabSDK.prototype.getEditerURL = function (config) {
         var labId = get(config, 'labId', '');
         var editURL = this.editHost + "/#/" + this.editEndName + "?token=" + this.token + "&uid=" + this.uid + "&labid=" + labId;
-        if (this.EDITER_DEBUG) {
+        if (this.debugEditerHost) {
             editURL += '&EDITER_DEBUG=1';
         }
         if (config && config.hasOwnProperty('fromOfficia')) {
@@ -273,7 +263,7 @@ var LabSDK = (function (_super) {
     };
     LabSDK.prototype.getPlayerURL = function (config) {
         if (this.isBiological()) {
-            if (this.PLAYER_DEBUG) {
+            if (this.debugPlayerHost) {
                 return host[this.pidType].PLAYER_HOST_DEBUG + "?sourceid=" + config.labId + "&token=" + this.token + "&type=" + this.from;
             }
             return "" + host[this.pidType].PLAYER_HOST + Base64.decode(config.labId) + "&token=" + this.token + "&type=" + this.from;
@@ -329,6 +319,20 @@ var LabSDK = (function (_super) {
     Object.defineProperty(LabSDK.prototype, "grade", {
         get: function () {
             return LAB_TYPE_GRADE[this.pidType];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(LabSDK.prototype, "debugEditerHost", {
+        get: function () {
+            return "" + get(this.debugSettings[this.isPhysical() ? 'physics' : 'chemical'], 'EDITER');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(LabSDK.prototype, "debugPlayerHost", {
+        get: function () {
+            return "" + get(this.debugSettings[this.isPhysical() ? 'physics' : 'chemical'], 'PLAYER');
         },
         enumerable: true,
         configurable: true

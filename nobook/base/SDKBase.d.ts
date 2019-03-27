@@ -1,5 +1,6 @@
 import * as EventEmitter from 'eventemitter3';
 export declare class SDKBase extends EventEmitter {
+    debugSettings: any;
     DEBUG: boolean;
     uniqueId: string;
     nickname: string;
@@ -14,7 +15,7 @@ export declare class SDKBase extends EventEmitter {
         appKey;
         pidType;
         from;
-        DEBUG?;
+        debugSettings?;
     }): void;
     login(param: {
         uniqueId;

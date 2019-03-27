@@ -30,9 +30,7 @@ export var host = {
     'BIOLOGICAL2': {
         ICON_HOST: 'https://res-api.nobook.com/sw/gz/libs/biology',
         PLAYER_HOST_DEBUG: 'http://shengwu-gz.nobook.cc/libs/biology'
-    },
-    EDIT_HOST_DEBUG: 'http://0.0.0.0:3033',
-    PLAYER_HOST_DEBUG: 'http://0.0.0.0:4800',
+    }
 };
 export var docURL = {
     searchDIYURL: "/api/v1/myexperiment/search",

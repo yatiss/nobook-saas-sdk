@@ -11,6 +11,7 @@ var __extends = (this && this.__extends) || (function () {
 import * as EventEmitter from 'eventemitter3';
 import * as $ from 'jquery';
 import { GLOBAL_HOST, GLOBAL_DOCURL } from '../config';
+import { get } from 'lodash';
 var SDKBase = (function (_super) {
     __extends(SDKBase, _super);
     function SDKBase() {
@@ -20,10 +21,11 @@ var SDKBase = (function (_super) {
         return _this;
     }
     SDKBase.prototype.setConfig = function (config) {
-        this.DEBUG = config.DEBUG;
+        this.debugSettings = config.debugSettings || {};
+        this.DEBUG = get(config, 'debugSettings.DOC_DEBUG', false);
         this.appKey = config.appKey;
         this.pidType = config.pidType;
-        this.docHost = config.DEBUG ? GLOBAL_HOST.DOC_HOST_DEBUG : GLOBAL_HOST.DOC_HOST;
+        this.docHost = this.DEBUG ? GLOBAL_HOST.DOC_HOST_DEBUG : GLOBAL_HOST.DOC_HOST;
         for (var _i = 0, _a = Object.keys(GLOBAL_DOCURL); _i < _a.length; _i++) {
             var key = _a[_i];
             GLOBAL_DOCURL[key] = this.docHost + GLOBAL_DOCURL[key];
