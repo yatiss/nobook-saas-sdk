@@ -10,6 +10,14 @@ export declare const PID_TYPE: {
     PHYSICAL_ADD: string;
     CHEMICAL_ADD: string;
 };
+export declare const LAB_TYPE_GRADE: {
+    PHYSICAL1: number;
+    PHYSICAL2: number;
+    CHEMICAL1: number;
+    CHEMICAL2: number;
+    BIOLOGICAL1: number;
+    BIOLOGICAL2: number;
+};
 export declare const PID_VALUE: {
     PHYSICAL1: {
         lab: string;

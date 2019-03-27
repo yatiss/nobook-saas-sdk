@@ -128,8 +128,13 @@ export declare class LabSDK extends SDKBase {
     freshEditerScreen(config: {
         iframeWindow;
     }): void;
-    getEditerURL(labId?: string, fromOfficia?: boolean): string;
-    getPlayerURL(labId: string): string;
+    getEditerURL(config: {
+        labId?;
+        fromOfficia?;
+    }): string;
+    getPlayerURL(config: {
+        labId;
+    }): string;
     getOfficiaIconURL(icon: any): string;
     getDIYIconURL(iconURL: any): string;
     getAllLabPidScope(): string;
@@ -137,4 +142,5 @@ export declare class LabSDK extends SDKBase {
     isPhysical(): boolean;
     isChemical(): boolean;
     isBiological(): boolean;
+    readonly grade: number;
 }

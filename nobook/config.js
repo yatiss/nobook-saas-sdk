@@ -10,6 +10,14 @@ export var PID_TYPE = {
     PHYSICAL_ADD: 'PHYSICAL_ADD',
     CHEMICAL_ADD: 'CHEMICAL_ADD'
 };
+export var LAB_TYPE_GRADE = {
+    PHYSICAL1: 1,
+    PHYSICAL2: 2,
+    CHEMICAL1: 1,
+    CHEMICAL2: 2,
+    BIOLOGICAL1: 1,
+    BIOLOGICAL2: 2
+};
 export var PID_VALUE = {
     PHYSICAL1: {
         lab: 'CZWlTE4lVgz9',

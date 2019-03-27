@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 import { merge, get } from 'lodash';
-import { PID_TYPE, PID_VALUE, MESSAGE_TYPE } from '../config';
+import { LAB_TYPE_GRADE, PID_TYPE, PID_VALUE, MESSAGE_TYPE } from '../config';
 import { host, docURL } from './lab-config';
 import { Base64 } from 'js-base64';
 import { SDKBase } from '../base';
@@ -257,28 +257,28 @@ var LabSDK = (function (_super) {
     LabSDK.prototype.freshEditerScreen = function (config) {
         config.iframeWindow.postMessage({ type: MESSAGE_TYPE.PHYSICS_SDK_INTERFACE_FRESH_DATA }, '*');
     };
-    LabSDK.prototype.getEditerURL = function (labId, fromOfficia) {
-        if (labId === void 0) { labId = ''; }
-        if (fromOfficia === void 0) { fromOfficia = false; }
+    LabSDK.prototype.getEditerURL = function (config) {
+        var labId = get(config, 'labId', '');
         var editURL = this.editHost + "/#/" + this.editEndName + "?token=" + this.token + "&uid=" + this.uid + "&labid=" + labId;
         if (this.EDITER_DEBUG) {
             editURL += '&EDITER_DEBUG=1';
         }
-        if (fromOfficia) {
+        if (config && config.hasOwnProperty('fromOfficia')) {
             editURL += '&sourcefrom=1';
         }
+        editURL += '&grade=' + this.grade;
         editURL += '&sdkv1=1';
         editURL += '&pidtype=' + this.pidType;
         return editURL;
     };
-    LabSDK.prototype.getPlayerURL = function (labId) {
+    LabSDK.prototype.getPlayerURL = function (config) {
         if (this.isBiological()) {
             if (this.PLAYER_DEBUG) {
-                return host[this.pidType].PLAYER_HOST_DEBUG + "?sourceid=" + labId + "&token=" + this.token + "&type=" + this.from;
+                return host[this.pidType].PLAYER_HOST_DEBUG + "?sourceid=" + config.labId + "&token=" + this.token + "&type=" + this.from;
             }
-            return "" + host[this.pidType].PLAYER_HOST + Base64.decode(labId) + "&token=" + this.token + "&type=" + this.from;
+            return "" + host[this.pidType].PLAYER_HOST + Base64.decode(config.labId) + "&token=" + this.token + "&type=" + this.from;
         }
-        var playerURL = this.playerHost + "?type=" + this.from + "&sourceid=" + labId;
+        var playerURL = this.playerHost + "?type=" + this.from + "&sourceid=" + config.labId;
         return playerURL;
     };
     LabSDK.prototype.getOfficiaIconURL = function (icon) {
@@ -326,6 +326,13 @@ var LabSDK = (function (_super) {
     LabSDK.prototype.isBiological = function () {
         return this.pidType === PID_TYPE.BIOLOGICAL1 || this.pidType === PID_TYPE.BIOLOGICAL2;
     };
+    Object.defineProperty(LabSDK.prototype, "grade", {
+        get: function () {
+            return LAB_TYPE_GRADE[this.pidType];
+        },
+        enumerable: true,
+        configurable: true
+    });
     return LabSDK;
 }(SDKBase));
 export { LabSDK };
