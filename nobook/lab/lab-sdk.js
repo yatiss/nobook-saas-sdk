@@ -250,7 +250,7 @@ var LabSDK = (function (_super) {
     LabSDK.prototype.getEditerURL = function (config) {
         var labId = get(config, 'labId', '');
         var editURL = this.editHost + "/#/" + this.editEndName + "?token=" + this.token + "&uid=" + this.uid + "&labid=" + labId;
-        if (this.debugEditerHost) {
+        if (this.editerDoc) {
             editURL += '&EDITER_DEBUG=1';
         }
         if (config && config.hasOwnProperty('fromOfficia')) {
@@ -333,6 +333,16 @@ var LabSDK = (function (_super) {
     Object.defineProperty(LabSDK.prototype, "debugPlayerHost", {
         get: function () {
             return "" + get(this.debugSettings[this.isPhysical() ? 'physics' : 'chemical'], 'PLAYER');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(LabSDK.prototype, "editerDoc", {
+        get: function () {
+            if (!this.debugEditerHost) {
+                return false;
+            }
+            return get(this.debugSettings[this.isPhysical() ? 'physics' : 'chemical'], 'EDITER_DOC', true);
         },
         enumerable: true,
         configurable: true

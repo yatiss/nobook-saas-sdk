@@ -139,4 +139,5 @@ export declare class LabSDK extends SDKBase {
     readonly grade: number;
     private readonly debugEditerHost;
     private readonly debugPlayerHost;
+    private readonly editerDoc;
 }
