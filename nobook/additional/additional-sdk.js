@@ -156,6 +156,7 @@ var AdditionalSDK = (function (_super) {
     };
     AdditionalSDK.prototype.getStudentExamInfo = function (param) {
         return this.$get(docURL.studentExamInfoURL, {
+            pid: this.pid,
             token: this.token,
             test_id: param.testId
         });

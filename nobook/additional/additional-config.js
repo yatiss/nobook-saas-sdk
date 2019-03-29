@@ -1,13 +1,14 @@
 export var host = {
-    ADD_DOC_HOST: 'http://exam-app.nobook.com',
+    ADD_DOC_HOST: 'https://exam-app.nobook.com',
     ADD_DOC_HOST_DEBUG: 'http://exam-app.nobook.cc',
     PHYSICAL_ADD: {
-        ICON_HOST: 'http://addphys.nobook.cc/v1/assets/physics'
+        ICON_HOST: 'https://exam-phy-player.nobook.com',
+        ICON_HOST1: 'https://imgcdn.nobook.com/exam/resource/addicomponents/v1/assets/physics/experiments'
     },
     CHEMICAL_ADD: {
         ICON_HOST: 'xxxxxxxxxxx'
     },
-    EXAM_VIEW_HOST: ''
+    EXAM_VIEW_HOST: 'https://exam-phy-player.nobook.com'
 };
 export var docURL = {
     courseListURL: "/api/v2/exam/courselist",
