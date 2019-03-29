@@ -2,8 +2,7 @@ export var host = {
     ADD_DOC_HOST: 'https://exam-app.nobook.com',
     ADD_DOC_HOST_DEBUG: 'http://exam-app.nobook.cc',
     PHYSICAL_ADD: {
-        ICON_HOST: 'https://exam-phy-player.nobook.com',
-        ICON_HOST1: 'https://imgcdn.nobook.com/exam/resource/addicomponents/v1/assets/physics/experiments'
+        ICON_HOST: 'https://imgcdn.nobook.com/exam/resource/addicomponents/v1/assets/physics'
     },
     CHEMICAL_ADD: {
         ICON_HOST: 'xxxxxxxxxxx'
