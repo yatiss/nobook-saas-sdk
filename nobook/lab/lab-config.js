@@ -25,10 +25,12 @@ export var host = {
     },
     'BIOLOGICAL1': {
         ICON_HOST: 'https://res-api.nobook.com/sw/cz/libs/biology',
+        PLAYER_HOST: 'https://shengwuv2-cz.nobook.com/libs/biology',
         PLAYER_HOST_DEBUG: 'http://shengwu-cz.nobook.cc/libs/biology'
     },
     'BIOLOGICAL2': {
         ICON_HOST: 'https://res-api.nobook.com/sw/gz/libs/biology',
+        PLAYER_HOST: 'https://shengwuv2-gz.nobook.com/libs/biology',
         PLAYER_HOST_DEBUG: 'http://shengwu-gz.nobook.cc/libs/biology'
     }
 };

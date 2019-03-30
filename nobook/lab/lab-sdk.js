@@ -263,10 +263,7 @@ var LabSDK = (function (_super) {
     };
     LabSDK.prototype.getPlayerURL = function (config) {
         if (this.isBiological()) {
-            if (this.debugPlayerHost) {
-                return host[this.pidType].PLAYER_HOST_DEBUG + "?sourceid=" + config.labId + "&token=" + this.token + "&type=" + this.from;
-            }
-            return "" + host[this.pidType].PLAYER_HOST + Base64.decode(config.labId) + "&token=" + this.token + "&type=" + this.from;
+            return host[this.pidType].PLAYER_HOST + "?sourceid=" + config.labId + "&token=" + this.token + "&type=" + this.from;
         }
         var playerURL = this.playerHost + "?type=" + this.from + "&sourceid=" + config.labId;
         return playerURL;
