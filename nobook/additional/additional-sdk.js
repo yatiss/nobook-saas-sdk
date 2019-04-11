@@ -50,14 +50,16 @@ var AdditionalSDK = (function (_super) {
         var _this = this;
         window.addEventListener('message', function (event) {
             var data = event.data || {};
+            console.log('~~~~~~~~~~~~~~~~~~~~~~message:', data);
             switch (data.type) {
                 case MESSAGE_TYPE.NOBOOK_SUBMIT_RESPONSE:
                     if (_this._saveExam_resolve) {
-                        _this._saveExam_resolve(data.result);
+                        _this._saveExam_resolve(data);
                         _this._saveExam_resolve = null;
                     }
                     break;
-                case MESSAGE_TYPE.NOBOOK_ONE_STEP:
+                case MESSAGE_TYPE.NOBOOK_ONE_STEP_CORRECT:
+                case MESSAGE_TYPE.NOBOOK_ONE_STEP_WRONG:
                 case MESSAGE_TYPE.NOBOOK_PRACICE_ONE_TITLE:
                 case MESSAGE_TYPE.NOBOOK_PRACICE_ONE_COMPLETE:
                 case MESSAGE_TYPE.NOBOOK_PRACICE_ONE_PROGRESS:

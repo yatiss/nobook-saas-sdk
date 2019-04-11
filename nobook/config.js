@@ -49,12 +49,14 @@ export var MESSAGE_TYPE = {
     SAVE_DATA_RESPONSE: 'PHYSICS_SDK_INTERFACE_SAVE_RESPONSE',
     NOBOOK_SUBMIT: 'nobook.submit',
     NOBOOK_SUBMIT_RESPONSE: 'nobook.submit_response',
-    NOBOOK_ONE_STEP: 'nobook.oneStepCorrect',
+    NOBOOK_ONE_STEP_CORRECT: 'nobook.oneStepCorrect',
+    NOBOOK_ONE_STEP_WRONG: 'nobook.oneStepWrong',
     NOBOOK_PRACICE_ONE_TITLE: 'nobook.oneStepTitle',
     NOBOOK_PRACICE_ONE_COMPLETE: 'nobook.oneStepComplete',
     NOBOOK_PRACICE_ONE_PROGRESS: 'nobook.oneStepProgress',
     PHYSICS_SDK_INTERFACE_FRESH_DATA: 'PHYSICS_SDK_INTERFACE_FRESH_DATA',
-    ON_LOAD: 'onload'
+    ON_LOAD: 'onload',
+    ON_LOAD_ERROR: 'load_error'
 };
 export var GLOBAL_HOST = {
     DOC_HOST: 'https://resourceapi.nobook.com',

@@ -49,12 +49,14 @@ export declare const MESSAGE_TYPE: {
     SAVE_DATA_RESPONSE: string;
     NOBOOK_SUBMIT: string;
     NOBOOK_SUBMIT_RESPONSE: string;
-    NOBOOK_ONE_STEP: string;
+    NOBOOK_ONE_STEP_CORRECT: string;
+    NOBOOK_ONE_STEP_WRONG: string;
     NOBOOK_PRACICE_ONE_TITLE: string;
     NOBOOK_PRACICE_ONE_COMPLETE: string;
     NOBOOK_PRACICE_ONE_PROGRESS: string;
     PHYSICS_SDK_INTERFACE_FRESH_DATA: string;
     ON_LOAD: string;
+    ON_LOAD_ERROR: string;
 };
 export declare const GLOBAL_HOST: {
     DOC_HOST: string;
