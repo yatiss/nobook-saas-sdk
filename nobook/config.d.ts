@@ -47,6 +47,8 @@ export declare const PID_VALUE: {
 export declare const MESSAGE_TYPE: {
     SAVE_DATA: string;
     SAVE_DATA_RESPONSE: string;
+    DATA_REQUEST: string;
+    DATA_REQUEST_RESPONSE: string;
     NOBOOK_SUBMIT: string;
     NOBOOK_SUBMIT_RESPONSE: string;
     NOBOOK_ONE_STEP_CORRECT: string;

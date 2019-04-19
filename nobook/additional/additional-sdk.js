@@ -84,6 +84,7 @@ var AdditionalSDK = (function (_super) {
                 time_length: config.timeLength,
                 exam_sn: config.examSn
             };
+            console.log('~~~~~~~~postMessage 提交:', data);
             config.iframeWindow.postMessage(data, '*');
         });
     };

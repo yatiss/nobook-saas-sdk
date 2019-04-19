@@ -18,6 +18,7 @@ var LabSDK = (function (_super) {
     function LabSDK() {
         var _this = _super.call(this) || this;
         _this._saveData_resolve = null;
+        _this._getSaveContent_resolve = null;
         _this._canDIY = false;
         _this.addListeners();
         return _this;
@@ -65,6 +66,10 @@ var LabSDK = (function (_super) {
             else if (data.type === MESSAGE_TYPE.ON_LOAD) {
                 _this.emit(MESSAGE_TYPE.ON_LOAD, event);
             }
+            else if (data.type === MESSAGE_TYPE.DATA_REQUEST_RESPONSE) {
+                _this._getSaveContent_resolve(data.result);
+                _this._getSaveContent_resolve = null;
+            }
         });
     };
     LabSDK.prototype.switchSubject = function (param) {
@@ -92,6 +97,20 @@ var LabSDK = (function (_super) {
             if (config && config.title) {
                 data.title = config.title;
             }
+            config.iframeWindow.postMessage(data, '*');
+        });
+    };
+    LabSDK.prototype.getSaveContent = function (config) {
+        var _this = this;
+        if (this._getSaveContent_resolve) {
+            return Promise.resolve({
+                success: false,
+                msg: '获取实验内容接口正在执行'
+            });
+        }
+        return new Promise(function (resolve) {
+            _this._getSaveContent_resolve = resolve;
+            var data = { type: MESSAGE_TYPE.DATA_REQUEST };
             config.iframeWindow.postMessage(data, '*');
         });
     };

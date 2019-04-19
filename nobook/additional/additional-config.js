@@ -7,7 +7,7 @@ export var host = {
     CHEMICAL_ADD: {
         ICON_HOST: 'xxxxxxxxxxx'
     },
-    EXAM_VIEW_HOST: 'http://192.168.1.22:8080'
+    EXAM_VIEW_HOST: 'https://exam-phy-player.nobook.com'
 };
 export var docURL = {
     courseListURL: "/api/v2/exam/courselist",

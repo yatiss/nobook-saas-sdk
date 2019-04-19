@@ -3,6 +3,7 @@ export declare class LabSDK extends SDKBase {
     private editHost;
     private playerHost;
     private _saveData_resolve;
+    private _getSaveContent_resolve;
     private editEndName;
     private iconHost;
     private _canDIY;
@@ -28,6 +29,12 @@ export declare class LabSDK extends SDKBase {
     saveData(config: {
         iframeWindow;
         title?;
+    }): Promise<{
+        success;
+        msg;
+    }>;
+    getSaveContent(config: {
+        iframeWindow;
     }): Promise<{
         success;
         msg;
