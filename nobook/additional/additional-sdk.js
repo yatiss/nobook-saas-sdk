@@ -22,20 +22,19 @@ var AdditionalSDK = (function (_super) {
     }
     AdditionalSDK.prototype.setConfig = function (config) {
         _super.prototype.setConfig.call(this, extend(config));
-        this.addDocHost = config.DEBUG ? host.ADD_DOC_HOST_DEBUG : host.ADD_DOC_HOST;
+        this.addDocHost = this.DOC_DEBUG ? host.ADD_DOC_HOST_DEBUG : host.ADD_DOC_HOST;
         this.freshPidConfig();
         for (var _i = 0, _a = Object.keys(docURL); _i < _a.length; _i++) {
             var key = _a[_i];
             docURL[key] = this.addDocHost + docURL[key];
         }
-        if (config.EXAM_VIEW_HOST_DEBUG) {
-            host.EXAM_VIEW_HOST = config.EXAM_VIEW_HOST_DEBUG;
+        console.log('************debugPlayerHost:', this.debugPlayerHost);
+        if (this.debugPlayerHost.length) {
+            this.playerHost = this.debugPlayerHost;
+            this.playerHost = this.playerHost.replace('https', 'http');
         }
-        if (config.ICON_HOST_PHYSICAL_DEBUG) {
-            host[PID_TYPE.PHYSICAL_ADD].ICON_HOST = config.ICON_HOST_PHYSICAL_DEBUG;
-        }
-        if (config.ICON_HOST_CHEMICAL_DEBUG) {
-            host[PID_TYPE.CHEMICAL_ADD].ICON_HOST = config.ICON_HOST_CHEMICAL_DEBUG;
+        else {
+            this.playerHost = host[this.pidType].PLAYER_HOST;
         }
     };
     AdditionalSDK.prototype.freshPidConfig = function () {
@@ -167,8 +166,25 @@ var AdditionalSDK = (function (_super) {
     AdditionalSDK.prototype.getExamViewURL = function (param) {
         if (!param.hasOwnProperty('isexam'))
             param.isexam = 1;
-        return host.EXAM_VIEW_HOST + "?relationid=" + param.courseId + "&token=" + this.token + "&isexam=" + param.isexam + "&pid=" + this.pid;
+        return this.playerHost + "?relationid=" + param.courseId + "&token=" + this.token + "&isexam=" + param.isexam + "&pid=" + this.pid;
     };
+    Object.defineProperty(AdditionalSDK.prototype, "debugPlayerHost", {
+        get: function () {
+            return "" + get(this.xkDebugSettings, 'PLAYER', '');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AdditionalSDK.prototype, "playerDoc", {
+        get: function () {
+            if (!this.debugPlayerHost.length) {
+                return false;
+            }
+            return get(this.xkDebugSettings, 'PLAYER_DOC', true);
+        },
+        enumerable: true,
+        configurable: true
+    });
     return AdditionalSDK;
 }(SDKBase));
 export { AdditionalSDK };

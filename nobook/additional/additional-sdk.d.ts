@@ -11,10 +11,7 @@ export declare class AdditionalSDK extends SDKBase {
         appKey;
         pidType;
         from;
-        DEBUG?;
-        EXAM_VIEW_HOST_DEBUG?;
-        ICON_HOST_PHYSICAL_DEBUG?;
-        ICON_HOST_CHEMICAL_DEBUG?;
+        debugSettings?;
     }): void;
     freshPidConfig(): void;
     switchSubject(param: {
@@ -89,4 +86,6 @@ export declare class AdditionalSDK extends SDKBase {
         courseId;
         isexam?;
     }): string;
+    protected readonly debugPlayerHost: string;
+    protected readonly playerDoc: boolean;
 }

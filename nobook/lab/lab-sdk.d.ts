@@ -1,7 +1,5 @@
 import { SDKBase } from '../base';
 export declare class LabSDK extends SDKBase {
-    private editHost;
-    private playerHost;
     private _saveData_resolve;
     private _getSaveContent_resolve;
     private editEndName;
@@ -53,6 +51,13 @@ export declare class LabSDK extends SDKBase {
         msg?;
     }>;
     clearRedis(): Promise<{
+        success;
+        data;
+        msg?;
+    }>;
+    migration(param: {
+        toUniqueId;
+    }): Promise<{
         success;
         data;
         msg?;
@@ -140,11 +145,7 @@ export declare class LabSDK extends SDKBase {
     getDIYIconURL(iconURL: any): string;
     getAllLabPidScope(): string;
     readonly canDIY: boolean;
-    isPhysical(): boolean;
-    isChemical(): boolean;
-    isBiological(): boolean;
-    readonly grade: number;
-    private readonly debugEditerHost;
-    private readonly debugPlayerHost;
-    private readonly editerDoc;
+    protected readonly debugEditerHost: string;
+    protected readonly debugPlayerHost: string;
+    protected readonly editerDoc: boolean;
 }

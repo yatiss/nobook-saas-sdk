@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 import { merge, get } from 'lodash';
-import { LAB_TYPE_GRADE, PID_TYPE, PID_VALUE, MESSAGE_TYPE } from '../config';
+import { PID_TYPE, PID_VALUE, MESSAGE_TYPE } from '../config';
 import { host, docURL } from './lab-config';
 import { Base64 } from 'js-base64';
 import { SDKBase } from '../base';
@@ -36,7 +36,7 @@ var LabSDK = (function (_super) {
         this._canDIY = this.isPhysical() || this.isChemical();
         this.editEndName = host[this.pidType].EDIT_END_NAME;
         this.iconHost = host[this.pidType].ICON_HOST;
-        if (this.DEBUG) {
+        if (this.DOC_DEBUG) {
             this.iconHost = this.iconHost.replace('https', 'http');
             this.iconHost = this.iconHost.replace('.com', '.cc');
         }
@@ -132,6 +132,13 @@ var LabSDK = (function (_super) {
         return this.$post(docURL.clearRedisURL, {
             pid: PID_VALUE[this.pidType].lab,
             token: this.token
+        });
+    };
+    LabSDK.prototype.migration = function (param) {
+        return this.$post(docURL.migrationURL, {
+            pid: PID_VALUE[this.pidType].lab,
+            token: this.token,
+            toUniqueId: param.toUniqueId
         });
     };
     LabSDK.prototype.getClassificationsList = function () {
@@ -323,32 +330,16 @@ var LabSDK = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    LabSDK.prototype.isPhysical = function () {
-        return this.pidType === PID_TYPE.PHYSICAL1 || this.pidType === PID_TYPE.PHYSICAL2;
-    };
-    LabSDK.prototype.isChemical = function () {
-        return this.pidType === PID_TYPE.CHEMICAL1 || this.pidType === PID_TYPE.CHEMICAL2;
-    };
-    LabSDK.prototype.isBiological = function () {
-        return this.pidType === PID_TYPE.BIOLOGICAL1 || this.pidType === PID_TYPE.BIOLOGICAL2;
-    };
-    Object.defineProperty(LabSDK.prototype, "grade", {
-        get: function () {
-            return LAB_TYPE_GRADE[this.pidType];
-        },
-        enumerable: true,
-        configurable: true
-    });
     Object.defineProperty(LabSDK.prototype, "debugEditerHost", {
         get: function () {
-            return "" + get(this.debugSettings[this.isPhysical() ? 'physics' : 'chemical'], 'EDITER', '');
+            return "" + get(this.xkDebugSettings, 'EDITER', '');
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LabSDK.prototype, "debugPlayerHost", {
         get: function () {
-            return "" + get(this.debugSettings[this.isPhysical() ? 'physics' : 'chemical'], 'PLAYER', '');
+            return "" + get(this.xkDebugSettings, 'PLAYER', '');
         },
         enumerable: true,
         configurable: true
@@ -358,7 +349,7 @@ var LabSDK = (function (_super) {
             if (!this.debugEditerHost.length) {
                 return false;
             }
-            return get(this.debugSettings[this.isPhysical() ? 'physics' : 'chemical'], 'EDITER_DOC', true);
+            return get(this.xkDebugSettings, 'EDITER_DOC', true);
         },
         enumerable: true,
         configurable: true

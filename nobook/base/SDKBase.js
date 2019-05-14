@@ -10,22 +10,23 @@ var __extends = (this && this.__extends) || (function () {
 })();
 import * as EventEmitter from 'eventemitter3';
 import * as $ from 'jquery';
+import { LAB_TYPE_GRADE, PID_TYPE } from '../config';
 import { GLOBAL_HOST, GLOBAL_DOCURL } from '../config';
 import { get } from 'lodash';
 var SDKBase = (function (_super) {
     __extends(SDKBase, _super);
     function SDKBase() {
         var _this = _super.call(this) || this;
-        _this.DEBUG = false;
+        _this.DOC_DEBUG = false;
         _this.token = null;
         return _this;
     }
     SDKBase.prototype.setConfig = function (config) {
         this.debugSettings = config.debugSettings || {};
-        this.DEBUG = get(config, 'debugSettings.DOC_DEBUG', false);
+        this.DOC_DEBUG = get(config, 'debugSettings.DOC_DEBUG', false);
         this.appKey = config.appKey;
         this.pidType = config.pidType;
-        this.docHost = this.DEBUG ? GLOBAL_HOST.DOC_HOST_DEBUG : GLOBAL_HOST.DOC_HOST;
+        this.docHost = this.DOC_DEBUG ? GLOBAL_HOST.DOC_HOST_DEBUG : GLOBAL_HOST.DOC_HOST;
         for (var _i = 0, _a = Object.keys(GLOBAL_DOCURL); _i < _a.length; _i++) {
             var key = _a[_i];
             GLOBAL_DOCURL[key] = this.docHost + GLOBAL_DOCURL[key];
@@ -102,6 +103,57 @@ var SDKBase = (function (_super) {
     SDKBase.prototype.isArray = function (obj) {
         return Object.prototype.toString.call(obj) === '[object Array]';
     };
+    Object.defineProperty(SDKBase.prototype, "grade", {
+        get: function () {
+            return LAB_TYPE_GRADE[this.pidType];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SDKBase.prototype, "xkType", {
+        get: function () {
+            if (this.isPhysical()) {
+                return 'PHYSICAL';
+            }
+            else if (this.isChemical()) {
+                return 'CHEMICAL';
+            }
+            else if (this.isBiological()) {
+                return 'BIOLOGICAL';
+            }
+            else if (this.isPhysicalAdd()) {
+                return 'PHYSICAL_ADD';
+            }
+            else if (this.isChemicalAdd()) {
+                return 'CHEMICAL_ADD';
+            }
+            return null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    SDKBase.prototype.isPhysical = function () {
+        return this.pidType === PID_TYPE.PHYSICAL1 || this.pidType === PID_TYPE.PHYSICAL2;
+    };
+    SDKBase.prototype.isChemical = function () {
+        return this.pidType === PID_TYPE.CHEMICAL1 || this.pidType === PID_TYPE.CHEMICAL2;
+    };
+    SDKBase.prototype.isBiological = function () {
+        return this.pidType === PID_TYPE.BIOLOGICAL1 || this.pidType === PID_TYPE.BIOLOGICAL2;
+    };
+    SDKBase.prototype.isPhysicalAdd = function () {
+        return this.pidType === PID_TYPE.PHYSICAL_ADD;
+    };
+    SDKBase.prototype.isChemicalAdd = function () {
+        return this.pidType === PID_TYPE.CHEMICAL_ADD;
+    };
+    Object.defineProperty(SDKBase.prototype, "xkDebugSettings", {
+        get: function () {
+            return this.debugSettings[this.xkType];
+        },
+        enumerable: true,
+        configurable: true
+    });
     return SDKBase;
 }(EventEmitter));
 export { SDKBase };

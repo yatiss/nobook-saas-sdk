@@ -42,6 +42,7 @@ export var docURL = {
     shareDIYURL: "/api/v1/myexperiment/share",
     getInfoDIYURL: "/api/v1/myexperiment/info",
     clearRedisURL: '/api/v1/myexperiment/clearCache',
+    migrationURL: '/api/v1/myexperiment/migration',
     getResourcesByChapterURL: "/api/v1/resources/listbychapterid",
     getResourcesByCategoryURL: "/api/v1/resources/listbycategoryid",
     getChapterURL: "/api/v1/resources/chapter",

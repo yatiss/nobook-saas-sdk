@@ -1,7 +1,7 @@
 import * as EventEmitter from 'eventemitter3';
 export declare class SDKBase extends EventEmitter {
     debugSettings: any;
-    DEBUG: boolean;
+    DOC_DEBUG: boolean;
     uniqueId: string;
     nickname: string;
     uid: string;
@@ -10,6 +10,8 @@ export declare class SDKBase extends EventEmitter {
     pidType: string;
     token: any;
     protected docHost: string;
+    protected editHost: string;
+    protected playerHost: string;
     constructor();
     setConfig(config: {
         appKey;
@@ -46,4 +48,12 @@ export declare class SDKBase extends EventEmitter {
     private $server(param);
     protected jsonObj(data: any): any;
     protected isArray(obj: any): boolean;
+    readonly grade: number;
+    readonly xkType: string;
+    isPhysical(): boolean;
+    isChemical(): boolean;
+    isBiological(): boolean;
+    isPhysicalAdd(): boolean;
+    isChemicalAdd(): boolean;
+    protected readonly xkDebugSettings: any;
 }
