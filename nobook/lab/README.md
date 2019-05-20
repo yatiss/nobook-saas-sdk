@@ -12,10 +12,11 @@ addListener(MESSAGE_TYPE.ON_LOAD, (event)=>{
  *  appKey  应用id,可传入前端使用,由nobook提供
  *  pidType 产品学科,由 PID_TYPE 对象选取
  *  from      来源公司名称
+ *  debugSettings      nobook内部调试使用,对接用户忽略
  * }
  * @param config
  */
-public setConfig(config: { appKey, pid, from, DEBUG?, EDITER_DEBUG?, PLAYER_DEBUG? }): void
+public setConfig(config: { appKey, pidType, from, debugSettings? }): void
 
 /**
  * 用户登录
@@ -78,6 +79,13 @@ public getChapter(): Promise<{ success, data, msg? }>
 public clearRedis(): Promise<{ success, data, msg? }>
 
 /**
+ * 实验数据迁移
+ * @param param: { toUniqueId: 第三方用户唯一标识 }
+ * @returns Promise<{success, data, msg?}>
+ */
+public migration(param: { toUniqueId }): Promise<{ success, data, msg? }>
+
+/**
  * 获取资源类别接口
  * @returns Promise<{success, data, msg?}>
  */
@@ -105,7 +113,7 @@ public searchDIY(param: { keyword }): Promise<{ success, data, msg? }>
 public searchResources(param: { keyword }): Promise<{ success, data, msg? }>
 
 /**
- * 按模块分类, 获取精品资源实验列表
+ * 按章节分类, 获取精品资源实验列表
  * 分级显示右侧内容
  * 结构: 年级-学科-版本-教材-章-节
  * 传参只传后4项: 版本-教材-章-节       textbookId-versionId-chapterId-sectionId

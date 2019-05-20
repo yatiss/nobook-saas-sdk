@@ -1,3 +1,13 @@
+<a name="2.1.6"></a>
+## [2.1.6](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v2.1.5...v2.1.6) (2019-05-20)
+
+
+### Bug Fixes
+
+* 修改README 说明 ([b8db259](https://192.168.1.111/virtual-lab/nobook-saas-source/commits/b8db259))
+
+
+
 <a name="2.1.5"></a>
 ## [2.1.5](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v2.1.4...v2.1.5) (2019-05-14)
 
