@@ -61,7 +61,7 @@ export var MESSAGE_TYPE = {
     ON_LOAD_ERROR: 'load_error'
 };
 export var GLOBAL_HOST = {
-    DOC_HOST: 'https://resourceapi.nobook.com',
+    DOC_HOST: 'http://192.168.1.6:81',
     DOC_HOST_DEBUG: 'http://resourceapi.nobook.cc',
 };
 export var GLOBAL_DOCURL = {

@@ -1,37 +1,35 @@
 export var host = {
     'PHYSICAL1': {
         EDIT_END_NAME: 'physics-courseware',
-        ICON_HOST: 'https://wuli.nobook.com',
-        EDIT_HOST: 'https://wuli.nobook.com',
-        PLAYER_HOST: 'https://wuliplayercdn.nobook.com'
+        ICON_HOST: 'http://192.168.1.6:84',
+        EDIT_HOST: 'http://192.168.1.6:84',
+        PLAYER_HOST: 'http://192.168.1.6:85'
     },
     'PHYSICAL2': {
         EDIT_END_NAME: 'physics-courseware',
-        ICON_HOST: 'https://wuli.nobook.com',
-        EDIT_HOST: 'https://wuli.nobook.com',
-        PLAYER_HOST: 'https://wuliplayercdn.nobook.com'
+        ICON_HOST: 'http://192.168.1.6:84',
+        EDIT_HOST: 'http://192.168.1.6:84',
+        PLAYER_HOST: 'http://192.168.1.6:85'
     },
     'CHEMICAL1': {
         EDIT_END_NAME: 'chemical-courseware',
-        ICON_HOST: 'https://huaxue.nobook.com',
-        EDIT_HOST: 'https://huaxue.nobook.com',
-        PLAYER_HOST: 'https://huaxueplayercdn.nobook.com'
+        ICON_HOST: 'http://192.168.1.6:86',
+        EDIT_HOST: 'http://192.168.1.6:86',
+        PLAYER_HOST: 'http://192.168.1.6:87'
     },
     'CHEMICAL2': {
         EDIT_END_NAME: 'chemical-courseware',
-        ICON_HOST: 'https://huaxue.nobook.com',
-        EDIT_HOST: 'https://huaxue.nobook.com',
-        PLAYER_HOST: 'https://huaxueplayercdn.nobook.com'
+        ICON_HOST: 'http://192.168.1.6:86',
+        EDIT_HOST: 'http://192.168.1.6:86',
+        PLAYER_HOST: 'http://192.168.1.6:87'
     },
     'BIOLOGICAL1': {
-        ICON_HOST: 'https://res-api.nobook.com/sw/cz/libs/biology',
-        PLAYER_HOST: 'https://shengwuv2-cz.nobook.com/libs/biology',
-        PLAYER_HOST_DEBUG: 'http://shengwu-cz.nobook.cc/libs/biology'
+        ICON_HOST: 'http://192.168.1.6:82/sw/cz/libs/biology',
+        PLAYER_HOST: 'http://192.168.1.6:82/libs/biology'
     },
     'BIOLOGICAL2': {
-        ICON_HOST: 'https://res-api.nobook.com/sw/gz/libs/biology',
-        PLAYER_HOST: 'https://shengwuv2-gz.nobook.com/libs/biology',
-        PLAYER_HOST_DEBUG: 'http://shengwu-gz.nobook.cc/libs/biology'
+        ICON_HOST: 'http://192.168.1.6:83/sw/gz/libs/biology',
+        PLAYER_HOST: 'http://192.168.1.6:83/libs/biology'
     }
 };
 export var docURL = {
