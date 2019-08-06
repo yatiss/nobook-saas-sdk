@@ -289,7 +289,7 @@ var LabSDK = (function (_super) {
     };
     LabSDK.prototype.getPlayerURL = function (config) {
         if (this.isBiological()) {
-            var url = this.playerHost + "/?sourceid=" + config.labId + "&token=" + this.token + "&type=" + this.from;
+            var url = this.playerHost + "?sourceid=" + config.labId + "&token=" + this.token + "&type=" + this.from;
             console.log('******url:', url);
             return url;
         }

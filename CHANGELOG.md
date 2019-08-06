@@ -1,3 +1,13 @@
+<a name="2.1.8"></a>
+## [2.1.8](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v2.1.7...v2.1.8) (2019-08-06)
+
+
+### Bug Fixes
+
+* 添加 window.__nb_saas_sdk_config 支持 ([9f4b7bb](https://192.168.1.111/virtual-lab/nobook-saas-source/commits/9f4b7bb))
+
+
+
 <a name="2.1.7"></a>
 ## [2.1.7](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v2.1.6...v2.1.7) (2019-06-18)
 

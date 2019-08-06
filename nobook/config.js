@@ -1,3 +1,5 @@
+import { merge } from 'lodash';
+var sdkConfig = window.__nb_saas_sdk_config;
 export var APPKEY_TEST = '111';
 export var APPSECRET_TEST = 'weqwew';
 export var PID_TYPE = {
@@ -61,9 +63,10 @@ export var MESSAGE_TYPE = {
     ON_LOAD_ERROR: 'load_error'
 };
 export var GLOBAL_HOST = {
-    DOC_HOST: 'http://192.168.1.6:81',
+    DOC_HOST: 'https://resourceapi.nobook.com',
     DOC_HOST_DEBUG: 'http://resourceapi.nobook.cc',
 };
+merge(GLOBAL_HOST, sdkConfig);
 export var GLOBAL_DOCURL = {
     loginURL: '/api/v1/login',
     logoutURL: '/api/v1/logout'
