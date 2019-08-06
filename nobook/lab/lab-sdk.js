@@ -306,6 +306,7 @@ var LabSDK = (function (_super) {
         return "" + this.iconHost + icon;
     };
     LabSDK.prototype.getDIYIconURL = function (iconURL) {
+        console.log('***********getDIYIconURL:', iconURL);
         if (/^http/ig.test(iconURL)) {
             return iconURL;
         }

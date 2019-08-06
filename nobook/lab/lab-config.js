@@ -36,7 +36,9 @@ export var host = {
         PLAYER_HOST_DEBUG: 'http://shengwu-gz.nobook.cc/libs/biology'
     }
 };
-merge(host, sdkConfig);
+if (sdkConfig && sdkConfig.host) {
+    merge(host, sdkConfig.host);
+}
 export var docURL = {
     searchDIYURL: "/api/v1/myexperiment/search",
     getListDIYURL: "/api/v1/myexperiment/get",
