@@ -290,7 +290,6 @@ var LabSDK = (function (_super) {
     LabSDK.prototype.getPlayerURL = function (config) {
         if (this.isBiological()) {
             var url = this.playerHost + "/?sourceid=" + config.labId + "&token=" + this.token + "&type=" + this.from;
-            console.log('******url:', url);
             return url;
         }
         var playerURL = this.playerHost + "?type=" + this.from + "&sourceid=" + config.labId;
@@ -306,7 +305,6 @@ var LabSDK = (function (_super) {
         return "" + this.iconHost + icon;
     };
     LabSDK.prototype.getDIYIconURL = function (iconURL) {
-        console.log('***********getDIYIconURL:', iconURL);
         if (/^http/ig.test(iconURL)) {
             return iconURL;
         }
