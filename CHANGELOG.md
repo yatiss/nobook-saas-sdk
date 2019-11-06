@@ -1,3 +1,13 @@
+<a name="2.1.14"></a>
+## [2.1.14](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v2.1.13...v2.1.14) (2019-11-06)
+
+
+### Bug Fixes
+
+* 物理添加 isMobile 以区分用哪个播放器 ([a70b488](https://192.168.1.111/virtual-lab/nobook-saas-source/commits/a70b488))
+
+
+
 <a name="2.1.13"></a>
 ## [2.1.13](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v2.1.12...v2.1.13) (2019-11-06)
 

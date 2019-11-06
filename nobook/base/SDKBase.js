@@ -18,6 +18,7 @@ var SDKBase = (function (_super) {
     function SDKBase() {
         var _this = _super.call(this) || this;
         _this.DOC_DEBUG = false;
+        _this.isMobile = false;
         _this.token = null;
         return _this;
     }
@@ -26,6 +27,7 @@ var SDKBase = (function (_super) {
         this.DOC_DEBUG = get(config, 'debugSettings.DOC_DEBUG', false);
         this.appKey = config.appKey;
         this.pidType = config.pidType;
+        this.isMobile = config.isMobile;
         this.docHost = this.DOC_DEBUG ? GLOBAL_HOST.DOC_HOST_DEBUG : GLOBAL_HOST.DOC_HOST;
         for (var _i = 0, _a = Object.keys(GLOBAL_DOCURL); _i < _a.length; _i++) {
             var key = _a[_i];

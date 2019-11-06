@@ -10,6 +10,7 @@ export declare class LabSDK extends SDKBase {
         appKey;
         pidType;
         from;
+        isMobile?;
         debugSettings?;
     }): void;
     private freshPidConfig();

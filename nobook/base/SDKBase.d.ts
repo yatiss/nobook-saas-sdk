@@ -8,6 +8,7 @@ export declare class SDKBase extends EventEmitter {
     appKey: string;
     from: string;
     pidType: string;
+    isMobile: boolean;
     token: any;
     protected docHost: string;
     protected editHost: string;
@@ -17,6 +18,7 @@ export declare class SDKBase extends EventEmitter {
         appKey;
         pidType;
         from;
+        isMobile?;
         debugSettings?;
     }): void;
     login(param: {

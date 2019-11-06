@@ -53,6 +53,9 @@ var LabSDK = (function (_super) {
         }
         else {
             this.playerHost = host[this.pidType].PLAYER_HOST;
+            if (this.isPhysical() && this.isMobile) {
+                this.playerHost = 'https://mwuliplayercdn.nobook.com';
+            }
         }
     };
     LabSDK.prototype.addListeners = function () {
