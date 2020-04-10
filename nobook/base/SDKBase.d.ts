@@ -20,6 +20,7 @@ export declare class SDKBase extends EventEmitter {
         from;
         isMobile?;
         debugSettings?;
+        docHost?;
     }): void;
     login(param: {
         uniqueId;

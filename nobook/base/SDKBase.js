@@ -29,6 +29,9 @@ var SDKBase = (function (_super) {
         this.pidType = config.pidType;
         this.isMobile = config.isMobile;
         this.docHost = this.DOC_DEBUG ? GLOBAL_HOST.DOC_HOST_DEBUG : GLOBAL_HOST.DOC_HOST;
+        if (config.docHost) {
+            this.docHost = config.docHost;
+        }
         for (var _i = 0, _a = Object.keys(GLOBAL_DOCURL); _i < _a.length; _i++) {
             var key = _a[_i];
             GLOBAL_DOCURL[key] = this.docHost + GLOBAL_DOCURL[key];
@@ -121,7 +124,7 @@ var SDKBase = (function (_super) {
                 return 'CHEMICAL';
             }
             else if (this.isBiological()) {
-                return 'BIOLOGICAL';
+                return this.pidType;
             }
             else if (this.isPhysicalAdd()) {
                 return 'PHYSICAL_ADD';
