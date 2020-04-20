@@ -10,9 +10,9 @@ var __extends = (this && this.__extends) || (function () {
 })();
 import * as EventEmitter from 'eventemitter3';
 import * as $ from 'jquery';
-import { LAB_TYPE_GRADE, PID_TYPE } from '../config';
-import { GLOBAL_HOST, GLOBAL_DOCURL } from '../config';
-import { get } from 'lodash';
+import { GLOBAL_DOCURL, GLOBAL_HOST, LAB_TYPE_GRADE, PID_TYPE } from '../config';
+import { get, merge } from 'lodash';
+import { host } from '../lab/lab-config';
 var SDKBase = (function (_super) {
     __extends(SDKBase, _super);
     function SDKBase() {
@@ -23,12 +23,19 @@ var SDKBase = (function (_super) {
         return _this;
     }
     SDKBase.prototype.setConfig = function (config) {
-        this.debugSettings = config.debugSettings || {};
-        this.DOC_DEBUG = get(config, 'debugSettings.DOC_DEBUG', false);
+        this.hostSettings = config.hostSettings || {};
         this.appKey = config.appKey;
         this.pidType = config.pidType;
         this.isMobile = config.isMobile;
-        this.docHost = this.DOC_DEBUG ? GLOBAL_HOST.DOC_HOST_DEBUG : GLOBAL_HOST.DOC_HOST;
+        if (config.hostSettings) {
+            this.docHost = get(config.hostSettings, 'DOC_HOST', GLOBAL_HOST.DOC_HOST);
+            ['PHYSICAL1', 'PHYSICAL2', 'CHEMICAL1', 'CHEMICAL2', 'BIOLOGICAL1', 'BIOLOGICAL2'].map(function (item) {
+                var setType = { 'PHYSICAL1': 'PHYSICAL', 'PHYSICAL2': 'PHYSICAL',
+                    'CHEMICAL1': 'CHEMICAL', 'CHEMICAL2': 'CHEMICAL',
+                    'BIOLOGICAL1': 'BIOLOGICAL', 'BIOLOGICAL2': 'BIOLOGICAL' }[item];
+                merge(host[item], config.hostSettings[setType]);
+            });
+        }
         if (config.docHost) {
             this.docHost = config.docHost;
         }
@@ -152,9 +159,9 @@ var SDKBase = (function (_super) {
     SDKBase.prototype.isChemicalAdd = function () {
         return this.pidType === PID_TYPE.CHEMICAL_ADD;
     };
-    Object.defineProperty(SDKBase.prototype, "xkDebugSettings", {
+    Object.defineProperty(SDKBase.prototype, "xkHostSettings", {
         get: function () {
-            return this.debugSettings[this.xkType];
+            return this.hostSettings[this.xkType];
         },
         enumerable: true,
         configurable: true

@@ -11,7 +11,7 @@ export declare class AdditionalSDK extends SDKBase {
         appKey;
         pidType;
         from;
-        debugSettings?;
+        hostSettings?;
     }): void;
     freshPidConfig(): void;
     switchSubject(param: {

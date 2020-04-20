@@ -170,7 +170,7 @@ var AdditionalSDK = (function (_super) {
     };
     Object.defineProperty(AdditionalSDK.prototype, "debugPlayerHost", {
         get: function () {
-            return "" + get(this.xkDebugSettings, 'PLAYER', '');
+            return "" + get(this.xkHostSettings, 'PLAYER', '');
         },
         enumerable: true,
         configurable: true
@@ -180,7 +180,7 @@ var AdditionalSDK = (function (_super) {
             if (!this.debugPlayerHost.length) {
                 return false;
             }
-            return get(this.xkDebugSettings, 'PLAYER_DOC', true);
+            return get(this.xkHostSettings, 'PLAYER_DOC', true);
         },
         enumerable: true,
         configurable: true

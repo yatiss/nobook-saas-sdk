@@ -8,9 +8,9 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-import { merge, get } from 'lodash';
-import { PID_TYPE, PID_VALUE, MESSAGE_TYPE } from '../config';
-import { host, docURL } from './lab-config';
+import { get, merge } from 'lodash';
+import { MESSAGE_TYPE, PID_TYPE, PID_VALUE } from '../config';
+import { docURL, host } from './lab-config';
 import { Base64 } from 'js-base64';
 import { SDKBase } from '../base';
 var LabSDK = (function (_super) {
@@ -40,8 +40,8 @@ var LabSDK = (function (_super) {
             this.iconHost = this.iconHost.replace('https', 'http');
             this.iconHost = this.iconHost.replace('.com', '.cc');
         }
-        if (this.debugEditerHost.length) {
-            this.editHost = this.debugEditerHost;
+        if (this.settingsEditerHost.length) {
+            this.editHost = this.settingsEditerHost;
             this.editHost = this.editHost.replace('https', 'http');
         }
         else {
@@ -334,26 +334,23 @@ var LabSDK = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(LabSDK.prototype, "debugEditerHost", {
+    Object.defineProperty(LabSDK.prototype, "settingsEditerHost", {
         get: function () {
-            return "" + get(this.xkDebugSettings, 'EDITER', '');
+            return "" + get(this.xkHostSettings, 'EDITER', '');
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LabSDK.prototype, "debugPlayerHost", {
         get: function () {
-            return "" + get(this.xkDebugSettings, 'PLAYER', '');
+            return "" + get(this.xkHostSettings, 'PLAYER', '');
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LabSDK.prototype, "editerDoc", {
         get: function () {
-            if (!this.debugEditerHost.length) {
-                return false;
-            }
-            return get(this.xkDebugSettings, 'EDITER_DOC', true);
+            return false;
         },
         enumerable: true,
         configurable: true

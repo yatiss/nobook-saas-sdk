@@ -1,6 +1,6 @@
 import * as EventEmitter from 'eventemitter3';
 export declare class SDKBase extends EventEmitter {
-    debugSettings: any;
+    hostSettings: any;
     DOC_DEBUG: boolean;
     uniqueId: string;
     nickname: string;
@@ -19,7 +19,7 @@ export declare class SDKBase extends EventEmitter {
         pidType;
         from;
         isMobile?;
-        debugSettings?;
+        hostSettings?;
         docHost?;
     }): void;
     login(param: {
@@ -58,5 +58,5 @@ export declare class SDKBase extends EventEmitter {
     isBiological(): boolean;
     isPhysicalAdd(): boolean;
     isChemicalAdd(): boolean;
-    protected readonly xkDebugSettings: any;
+    protected readonly xkHostSettings: any;
 }

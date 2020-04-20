@@ -1,3 +1,14 @@
+<a name="2.1.17"></a>
+## [2.1.17](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v2.1.16...v2.1.17) (2020-04-20)
+
+
+### Bug Fixes
+
+* 添加 hostSettings ([fa7f001](https://192.168.1.111/virtual-lab/nobook-saas-source/commits/fa7f001))
+* 添加icon配置 ([6f8f3a0](https://192.168.1.111/virtual-lab/nobook-saas-source/commits/6f8f3a0))
+
+
+
 <a name="2.1.16"></a>
 ## [2.1.16](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v2.1.15...v2.1.16) (2020-04-10)
 

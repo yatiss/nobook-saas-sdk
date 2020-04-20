@@ -11,7 +11,7 @@ export declare class LabSDK extends SDKBase {
         pidType;
         from;
         isMobile?;
-        debugSettings?;
+        hostSettings?;
     }): void;
     private freshPidConfig();
     private addListeners();
@@ -146,7 +146,7 @@ export declare class LabSDK extends SDKBase {
     getDIYIconURL(iconURL: any): string;
     getAllLabPidScope(): string;
     readonly canDIY: boolean;
-    protected readonly debugEditerHost: string;
+    protected readonly settingsEditerHost: string;
     protected readonly debugPlayerHost: string;
     protected readonly editerDoc: boolean;
 }

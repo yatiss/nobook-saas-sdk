@@ -12,11 +12,11 @@ addListener(MESSAGE_TYPE.ON_LOAD, (event)=>{
  *  appKey  应用id,可传入前端使用,由nobook提供
  *  pidType 产品学科,由 PID_TYPE 对象选取
  *  from      来源公司名称
- *  debugSettings      nobook内部调试使用,对接用户忽略
+ *  hostSettings host设置
  * }
  * @param config
  */
-public setConfig(config: { appKey, pidType, from, debugSettings? }): void
+public setConfig(config: { appKey, pidType, from, hostSettings? }): void
 
 /**
  * 获取物理、化学加试 PidScope
