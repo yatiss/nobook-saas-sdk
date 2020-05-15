@@ -191,7 +191,14 @@ var LabSDK = (function (_super) {
         return this.$get(docURL.searchResourcesURL, {
             token: this.token,
             pid: PID_VALUE[this.pidType].source,
-            keyword: param.keyword
+            keyword: param.keyword,
+            versionId: param.versionId,
+            textbookId: param.textbookId,
+            chapterId: param.chapterId,
+            sectionId: param.sectionId,
+            categoryId: param.categoryId,
+            perPage: param.perPage,
+            page: param.page
         }).then(function (obj) {
             if (_this.isBiological()) {
                 var dataObj = obj.data;
@@ -271,6 +278,22 @@ var LabSDK = (function (_super) {
             pid: PID_VALUE[this.pidType].lab,
             uniqueId: param.uniqueId,
             id: param.labId
+        });
+    };
+    LabSDK.prototype.copyResources = function (param) {
+        return this.$post(docURL.copyResourcesURL, {
+            token: this.token,
+            pid: PID_VALUE[this.pidType].source,
+            id: param.labId,
+            title: param.title
+        });
+    };
+    LabSDK.prototype.copyDIY = function (param) {
+        return this.$post(docURL.copyDIYURL, {
+            token: this.token,
+            pid: PID_VALUE[this.pidType].lab,
+            id: param.labId,
+            title: param.title
         });
     };
     LabSDK.prototype.freshEditerScreen = function (config) {

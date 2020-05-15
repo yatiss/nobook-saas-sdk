@@ -83,7 +83,14 @@ export declare class LabSDK extends SDKBase {
         msg?;
     }>;
     searchResources(param: {
-        keyword;
+        versionId?;
+        textbookId?;
+        chapterId?;
+        sectionId?;
+        categoryId?;
+        perPage?;
+        page?;
+        keyword?;
     }): Promise<{
         success;
         data;
@@ -127,6 +134,22 @@ export declare class LabSDK extends SDKBase {
     shareDIY(param: {
         uniqueId;
         labId;
+    }): Promise<{
+        success;
+        data;
+        msg?;
+    }>;
+    copyResources(param: {
+        labId;
+        title?;
+    }): Promise<{
+        success;
+        data;
+        msg?;
+    }>;
+    copyDIY(param: {
+        labId;
+        title?;
     }): Promise<{
         success;
         data;

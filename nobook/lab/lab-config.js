@@ -48,10 +48,12 @@ export var docURL = {
     getInfoDIYURL: "/api/v1/myexperiment/info",
     clearRedisURL: '/api/v1/myexperiment/clearCache',
     migrationURL: '/api/v1/myexperiment/migration',
+    copyDIYURL: "/api/v1/myexperiment/copy",
     getResourcesByChapterURL: "/api/v1/resources/listbychapterid",
     getResourcesByCategoryURL: "/api/v1/resources/listbycategoryid",
     getChapterURL: "/api/v1/resources/chapter",
     classificationsURL: "/api/v1/resources/experimentcategory",
     searchResourcesURL: "/api/v1/resources/search",
-    getInfoResourcesURL: "/api/v1/resources/info"
+    getInfoResourcesURL: "/api/v1/resources/info",
+    copyResourcesURL: "/api/v1/resources/copy"
 };

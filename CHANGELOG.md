@@ -1,3 +1,13 @@
+<a name="2.1.19"></a>
+## [2.1.19](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v2.1.18...v2.1.19) (2020-05-15)
+
+
+### Bug Fixes
+
+* add url 描述 ([1ca58aa](https://192.168.1.111/virtual-lab/nobook-saas-source/commits/1ca58aa))
+
+
+
 <a name="2.1.18"></a>
 ## [2.1.18](https://192.168.1.111/virtual-lab/nobook-saas-source/compare/v2.1.17...v2.1.18) (2020-04-20)
 
